@@ -96,6 +96,15 @@ public class Game {
         this.votes = votes;
     }
 
+    public  void addPlayerToGame(Player player){
+        this.players.add(player);
+    }
+
+    public void removePlayerFromGame(Player player){
+        this.players.remove(player);
+    }
+
+
 
 
 }
