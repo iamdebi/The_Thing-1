@@ -1,6 +1,7 @@
 package com.example.The_Thing.models;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Game {
@@ -102,6 +103,14 @@ public class Game {
 
     public void removePlayerFromGame(Player player){
         this.players.remove(player);
+    }
+
+    public void randomise(ArrayList arrayList){
+        Collections.shuffle(arrayList);
+    }
+
+    int playerCount() {
+        return this.players.size();
     }
 
 
