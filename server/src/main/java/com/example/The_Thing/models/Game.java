@@ -1,4 +1,4 @@
-package models;
+package com.example.The_Thing.models;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -95,5 +95,7 @@ public class Game {
     public void setVotes(List<String> votes) {
         this.votes = votes;
     }
+
+
 
 }

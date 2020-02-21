@@ -1,4 +1,4 @@
-package models;
+package com.example.The_Thing.models;
 
 import javax.persistence.*;
 
