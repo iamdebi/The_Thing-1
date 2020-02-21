@@ -8,6 +8,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 @SpringBootTest
 class gameTest {
 
@@ -29,7 +31,8 @@ class gameTest {
     void canShuffleGame(){
         game = new Game();
         card1 = new Card("imitationBlocked");
-        card1 = new Card("imitationPassed");
+        card3 = new Card("imitationBlocked");
+        card2 = new Card("imitationPassed");
         player1 = new Player("player1");
         player2 = new Player("player2");
         player3 = new Player("player3");
@@ -41,7 +44,8 @@ class gameTest {
         players.add(player4);
 
         game.randomise(players);
-
+        assertEquals(4, game.playerCount());
+        assertEquals(player1, game.getFirstPlayer());
     }
 
 }

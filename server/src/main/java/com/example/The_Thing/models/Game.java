@@ -109,10 +109,14 @@ public class Game {
         Collections.shuffle(arrayList);
     }
 
-    int playerCount() {
+    public int playerCount() {
         return this.players.size();
     }
 
+    public Player getFirstPlayer(){
+        Player player = this.players.get(0);
+        return player;
+    }
 
 
 
