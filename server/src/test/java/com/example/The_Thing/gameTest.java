@@ -29,6 +29,7 @@ class gameTest {
 
     @Test
     void canShufflePlayer(){
+        //        randomises so may fail sometimes, ensures the first player1 isn't always first player in array
         game = new Game();
         player1 = new Player("player1");
         player2 = new Player("player2");
@@ -47,7 +48,8 @@ class gameTest {
 
 
     @Test
-    void canShufflecard(){
+    void canShuffleCard(){
+//        randomises so may fail sometimes, ensures the first card1 isn't always first card in array
         game = new Game();
         card1 = new Card("imitationBlocked");
         card3 = new Card("imitationBlocked");
@@ -58,7 +60,7 @@ class gameTest {
         game.addCardToGame(card3);
 
         game.randomise(game.getCardDeck());
-        assertEquals(4, game.cardCount());
+        assertEquals(3, game.cardCount());
         assertEquals(card1, game.getFirstCard());
     }
 
