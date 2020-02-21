@@ -37,11 +37,12 @@ class gameTest {
         player2 = new Player("player2");
         player3 = new Player("player3");
         player4 = new Player("player4");
-        players = new ArrayList<>();
-        players.add(player1);
-        players.add(player2);
-        players.add(player3);
-        players.add(player4);
+
+        game.addPlayerToGame(player1);
+        game.addPlayerToGame(player2);
+        game.addPlayerToGame(player3);
+        game.addPlayerToGame(player4);
+
 
         game.randomise(players);
         assertEquals(4, game.playerCount());

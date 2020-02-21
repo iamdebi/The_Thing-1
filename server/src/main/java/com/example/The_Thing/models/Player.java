@@ -23,11 +23,11 @@ public class Player {
     @Column(name = "coCaptain")
     private Boolean coCaptain;
 
-    @Column()
+    @Column(name = "vote")
     private String vote;
 
     @Column(name = "cards")
-    private List<Card> cards;
+    private ArrayList<Card> cards;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
