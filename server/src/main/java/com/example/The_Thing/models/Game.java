@@ -140,6 +140,14 @@ public class Game {
         return this.aliens.size();
     }
 
+    public void populateAliens(){
+        randomise(this.players);
+         Player alien1 = this.players.get(0);
+         Player alien2 = this.players.get(1);
+         this.aliens.add(alien1);
+         this.aliens.add(alien2);
+    }
+
 
 
 

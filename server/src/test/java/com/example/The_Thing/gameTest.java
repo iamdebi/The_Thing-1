@@ -21,7 +21,8 @@ class gameTest {
     Player player2;
     Player player3;
     Player player4;
-   ArrayList<Player> players;
+    Player player5;
+    Player player6;
 
     @Test
     void contextLoads() {
@@ -62,6 +63,30 @@ class gameTest {
         game.randomise(game.getCardDeck());
         assertEquals(3, game.cardCount());
         assertEquals(card1, game.getFirstCard());
+    }
+
+    @Test
+    void canPopulateAliens(){
+        game = new Game();
+        player1 = new Player("player1");
+        player2 = new Player("player2");
+        player3 = new Player("player3");
+        player4 = new Player("player4");
+        player5 = new Player("player5");
+        player6 = new Player("player6");
+
+        game.addPlayerToGame(player1);
+        game.addPlayerToGame(player2);
+        game.addPlayerToGame(player3);
+        game.addPlayerToGame(player4);
+        game.addPlayerToGame(player5);
+        game.addPlayerToGame(player6);
+
+        game.populateAliens();
+
+        assertEquals(6, game.playerCount());
+        assertEquals(2, game.alienCount());
+
     }
 
 }
