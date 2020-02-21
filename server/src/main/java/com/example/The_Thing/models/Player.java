@@ -62,40 +62,39 @@ public class Player {
         this.role = role;
     }
 
-    String getParty() {
+    public String getParty() {
         return party;
     }
 
-    void setParty(String party) {
+    public void setParty(String party) {
         this.party = party;
     }
 
-    Boolean getCaptain() {
+    public Boolean getCaptain() {
         return captain;
     }
 
-    void setCaptain(Boolean captain) {
+    public void setCaptain(Boolean captain) {
         this.captain = captain;
     }
 
-    Boolean getCoCaptain() {
+    public Boolean getCoCaptain() {
         return coCaptain;
     }
 
-    void setCoCaptain(Boolean coCaptain) {
+    public void setCoCaptain(Boolean coCaptain) {
         this.coCaptain = coCaptain;
     }
 
-    String getVote() {
+    public String getVote() {
         return vote;
     }
 
-    void setVote(String vote) {
+    public void setVote(String vote) {
         this.vote = vote;
     }
 
-    Long getId() {
+    public Long getId() {
         return id;
     }
-
 }

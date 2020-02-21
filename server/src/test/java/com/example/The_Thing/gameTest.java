@@ -21,7 +21,7 @@ class gameTest {
     Player player2;
     Player player3;
     Player player4;
-   ArrayList<Player> players;
+    ArrayList<Player> players;
 
     @Test
     void contextLoads() {
