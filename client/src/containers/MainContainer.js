@@ -1,5 +1,6 @@
 import React, { Fragment, Component } from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import Request from '../helpers/request';
 
 class MainContainer extends Component {
   constructor(props){
@@ -33,7 +34,7 @@ class MainContainer extends Component {
     }
 
     return(
-      <p>text</p>
+      <p>I am MainContainer</p>
     )
   }
 
