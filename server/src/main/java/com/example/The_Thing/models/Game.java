@@ -15,9 +15,9 @@ public class Game {
 
     private ArrayList<Card> cardsInPlay;
 
-    private ArrayList<Card> imitationPass;
+    private ArrayList<Card> imitationPassBoard;
 
-    private ArrayList<Card> imitationBlock;
+    private ArrayList<Card> imitationBlockBoard;
 
     private ArrayList<String> votes;
 
@@ -27,8 +27,8 @@ public class Game {
         this.humans = new ArrayList<>();
         this.cardDeck = new ArrayList<>();
         this.cardsInPlay = new ArrayList<>();
-        this.imitationPass = new ArrayList<>();
-        this.imitationBlock = new ArrayList<>();
+        this.imitationPassBoard = new ArrayList<>();
+        this.imitationBlockBoard = new ArrayList<>();
         this.votes = new ArrayList<>();
     }
 
@@ -74,20 +74,20 @@ public class Game {
         this.cardsInPlay = cardsInPlay;
     }
 
-    public ArrayList<Card> getImitationPass() {
-        return imitationPass;
+    public ArrayList<Card> getImitationPassBoard() {
+        return imitationPassBoard;
     }
 
-    public void setImitationPass(ArrayList<Card> imitationPass) {
-        this.imitationPass = imitationPass;
+    public void setImitationPassBoard(ArrayList<Card> imitationPassBoard) {
+        this.imitationPassBoard = imitationPassBoard;
     }
 
-    public ArrayList<Card> getImitationBlock() {
-        return imitationBlock;
+    public ArrayList<Card> getImitationBlockBoard() {
+        return imitationBlockBoard;
     }
 
-    public void setImitationBlock(ArrayList<Card> imitationBlock) {
-        this.imitationBlock = imitationBlock;
+    public void setImitationBlockBoard(ArrayList<Card> imitationBlockBoard) {
+        this.imitationBlockBoard = imitationBlockBoard;
     }
 
     public ArrayList<String> getVotes() {
