@@ -5,11 +5,13 @@ class RoleContainer extends Component {
     super(props);
     this.state = {
       players: this.props.players,
-      captain: null
+      captain: null,
+      coCaptain: null
     };
 
     this.getCaptain = this.getCaptain.bind(this);
-    this.getCoCaptain = this.getCoCaptain.bind(this);
+    this.setCoCaptainDropDown = this.setCoCaptainDropDown.bind(this);
+    this.getCoCaptainId = this.getCoCaptainId.bind(this);
   }
 
   componentDidMount() {
@@ -26,30 +28,41 @@ class RoleContainer extends Component {
     });
   }
 
-  getCoCaptain() {
+  getCoCaptainId(event) {
+    return event.target.value;
+  }
+
+  setCoCaptainDropDown() {
     const players = this.state.players;
+
     const options = players.map((player, index) => {
       return (
-        <option key={index} value={player.id}>
+        <option name={player.id} key={index} value={player.id}>
           {player.name}
         </option>
       );
     });
-    return <select>{options}</select>;
+    return <select onChange={this.setCoCaptainState}>{options}</select>;
+  }
+
+  setCoCaptainState() {
+    const id = this.getCoCaptainId();
+    const player = this.state.players.filter(player => player.id === id);
+    console.log(player);
+    return player;
   }
 
   render() {
-    console.log(this.state);
     if (!this.state.captain) {
       return null;
     }
     const name = "name";
     return (
       <Fragment>
-        <h3>Captain:</h3>
-        <p>{this.state.captain[name]}</p>
+        <h2>Captain:</h2>
+        <h4>{this.state.captain[name]}</h4>
         <h3>CoCaptain</h3>
-        {this.getCoCaptain()}
+        {this.setCoCaptainDropDown()}
       </Fragment>
     );
   }
