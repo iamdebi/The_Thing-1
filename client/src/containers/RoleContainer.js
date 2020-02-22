@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from "react";
-import CaptainCompenet from "../components/GameComponents/Captain";
 
 class RoleContainer extends Component {
   constructor(props) {
@@ -10,6 +9,7 @@ class RoleContainer extends Component {
     };
 
     this.getCaptain = this.getCaptain.bind(this);
+    this.getCoCaptain = this.getCoCaptain.bind(this);
   }
 
   componentDidMount() {
@@ -19,11 +19,23 @@ class RoleContainer extends Component {
   getCaptain() {
     const players = this.state.players;
     players.map((player, index) => {
-      if (player.captain == true) {
+      if (player.captain === true) {
         console.log(player);
         return this.setState({ captain: player });
       }
     });
+  }
+
+  getCoCaptain() {
+    const players = this.state.players;
+    const options = players.map((player, index) => {
+      return (
+        <option key={index} value={player.id}>
+          {player.name}
+        </option>
+      );
+    });
+    return <select>{options}</select>;
   }
 
   render() {
@@ -35,8 +47,9 @@ class RoleContainer extends Component {
     return (
       <Fragment>
         <h3>Captain:</h3>
-
         <p>{this.state.captain[name]}</p>
+        <h3>CoCaptain</h3>
+        {this.getCoCaptain()}
       </Fragment>
     );
   }
