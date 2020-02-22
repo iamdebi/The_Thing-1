@@ -31,11 +31,12 @@ class RoleContainer extends Component {
     if (!this.state.captain) {
       return null;
     }
-
+    const name = "name";
     return (
       <Fragment>
         <h3>Captain:</h3>
-        <p>{this.props.captain}</p>
+
+        <p>{this.state.captain[name]}</p>
       </Fragment>
     );
   }
