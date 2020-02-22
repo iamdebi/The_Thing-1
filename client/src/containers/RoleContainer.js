@@ -1,15 +1,43 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
+import CaptainCompenet from "../components/GameComponents/Captain";
 
 class RoleContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      players: props.players
+      players: this.props.players,
+      captain: null
     };
+
+    this.getCaptain = this.getCaptain.bind(this);
+  }
+
+  componentDidMount() {
+    this.getCaptain();
+  }
+
+  getCaptain() {
+    const players = this.state.players;
+    players.map((player, index) => {
+      if (player.captain == true) {
+        console.log(player);
+        return this.setState({ captain: player });
+      }
+    });
   }
 
   render() {
-    return <p>I am the game RoleContainer</p>;
+    console.log(this.state);
+    if (!this.state.captain) {
+      return null;
+    }
+
+    return (
+      <Fragment>
+        <h3>Captain:</h3>
+        <p>{this.props.captain}</p>
+      </Fragment>
+    );
   }
 }
 

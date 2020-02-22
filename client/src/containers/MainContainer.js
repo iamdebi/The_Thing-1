@@ -5,6 +5,8 @@ import PreGameContainer from "./PreGameContainer";
 import GameContainer from "./GameContainer";
 
 class MainContainer extends Component {
+  // i have commented this out as I think it should be in the gameContainer?
+
   // constructor(props) {
   //   super(props);
   //   this.state = {
