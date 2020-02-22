@@ -29,6 +29,10 @@ public class DataLoader implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
 
+
+        Game game = new Game();
+        gameRepository.save(game);
+
         Card imitationBlocked = new Card("blocked");
         cardRepository.save(imitationBlocked);
 
@@ -64,9 +68,6 @@ public class DataLoader implements ApplicationRunner {
 
         Player player5 = new Player("Michael");
         playerRepository.save(player5);
-
-        Game game = new Game();
-        gameRepository.save(game);
 
         game.addPlayerToGame(player1);
         game.addCardToGame(imitationPassed2);

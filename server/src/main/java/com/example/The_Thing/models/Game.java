@@ -1,41 +1,34 @@
 package com.example.The_Thing.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 @Entity
-@Table
+@Table(name = "games")
 public class Game {
 
-    @Column(name ="players")
+
     private List<Player> players;
 
-    @Column(name ="alines")
     private List<Player> aliens;
 
-    @Column(name ="humans")
     private List<Player> humans;
 
-    @Column(name ="cardDeck")
     private List<Card> cardDeck;
 
-    @Column(name ="cardsInPlay")
     private List<Card> cardsInPlay;
 
-    @Column
     private List<Card> imitationPassBoard;
 
-    @Column
     private List<Card> imitationBlockBoard;
 
-    @Column
     private List<String> votes;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
     public Game() {
         this.players = new ArrayList<>();
@@ -110,14 +103,6 @@ public class Game {
 
     public void setVotes(ArrayList<String> votes) {
         this.votes = votes;
-    }
-
-    public Long getId() {
-        return this.id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public  void addPlayerToGame(Player player){

@@ -1,5 +1,7 @@
 package com.example.The_Thing.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +16,7 @@ public class Player {
     @Column(name = "role")
     private String role;
 
+//    @OneToMany(mappedBy = "aliens", fetch = FetchType.LAZY)
     @Column(name = "party")
     private String party;
 
