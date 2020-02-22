@@ -1,8 +1,10 @@
 package com.example.The_Thing.components;
 
 import com.example.The_Thing.models.Card;
+import com.example.The_Thing.models.Game;
 import com.example.The_Thing.models.Player;
 import com.example.The_Thing.repositories.CardRepository;
+import com.example.The_Thing.repositories.GameRepository;
 import com.example.The_Thing.repositories.PlayerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -17,6 +19,9 @@ public class DataLoader implements ApplicationRunner {
 
     @Autowired
     private PlayerRepository playerRepository;
+
+    @Autowired
+    private GameRepository gameRepository;
 
     public DataLoader() {
     }
@@ -59,6 +64,13 @@ public class DataLoader implements ApplicationRunner {
 
         Player player5 = new Player("Michael");
         playerRepository.save(player5);
+
+        Game game = new Game();
+        gameRepository.save(game);
+
+        game.addPlayerToGame(player1);
+        game.addCardToGame(imitationPassed2);
+        gameRepository.save(game);
 
     }
 

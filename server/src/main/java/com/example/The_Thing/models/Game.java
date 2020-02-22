@@ -1,25 +1,41 @@
 package com.example.The_Thing.models;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
+@Entity
+@Table
 public class Game {
 
-    private ArrayList<Player> players;
+    @Column(name ="players")
+    private List<Player> players;
 
-    private ArrayList<Player> aliens;
+    @Column(name ="alines")
+    private List<Player> aliens;
 
-    private ArrayList<Player> humans;
+    @Column(name ="humans")
+    private List<Player> humans;
 
-    private ArrayList<Card> cardDeck;
+    @Column(name ="cardDeck")
+    private List<Card> cardDeck;
 
-    private ArrayList<Card> cardsInPlay;
+    @Column(name ="cardsInPlay")
+    private List<Card> cardsInPlay;
 
-    private ArrayList<Card> imitationPassBoard;
+    @Column
+    private List<Card> imitationPassBoard;
 
-    private ArrayList<Card> imitationBlockBoard;
+    @Column
+    private List<Card> imitationBlockBoard;
 
-    private ArrayList<String> votes;
+    @Column
+    private List<String> votes;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     public Game() {
         this.players = new ArrayList<>();
@@ -32,70 +48,76 @@ public class Game {
         this.votes = new ArrayList<>();
     }
 
-
-
-    public ArrayList<Player> getPlayers() {
-        return players;
+    public List<Player> getPlayers() {
+        return this.players;
     }
 
     public void setPlayers(ArrayList<Player> players) {
         this.players = players;
     }
 
-    public ArrayList<Player> getAliens() {
-        return aliens;
+    public List<Player> getAliens() {
+        return this.aliens;
     }
 
     public void setAliens(ArrayList<Player> aliens) {
         this.aliens = aliens;
     }
 
-    public ArrayList<Player> getHumans() {
-        return humans;
+    public List<Player> getHumans() {
+        return this.humans;
     }
 
     public void setHumans(ArrayList<Player> humans) {
         this.humans = humans;
     }
 
-    public ArrayList<Card> getCardDeck() {
-        return cardDeck;
+    public List<Card> getCardDeck() {
+        return this.cardDeck;
     }
 
     public void setCardDeck(ArrayList<Card> cardDeck) {
         this.cardDeck = cardDeck;
     }
 
-    public ArrayList<Card> getCardsInPlay() {
-        return cardsInPlay;
+    public List<Card> getCardsInPlay() {
+        return this.cardsInPlay;
     }
 
     public void setCardsInPlay(ArrayList<Card> cardsInPlay) {
         this.cardsInPlay = cardsInPlay;
     }
 
-    public ArrayList<Card> getImitationPassBoard() {
-        return imitationPassBoard;
+    public List<Card> getImitationPassBoard() {
+        return this.imitationPassBoard;
     }
 
     public void setImitationPassBoard(ArrayList<Card> imitationPassBoard) {
         this.imitationPassBoard = imitationPassBoard;
     }
 
-    public ArrayList<Card> getImitationBlockBoard() {
-        return imitationBlockBoard;
+    public List<Card> getImitationBlockBoard() {
+        return this.imitationBlockBoard;
     }
 
     public void setImitationBlockBoard(ArrayList<Card> imitationBlockBoard) {
         this.imitationBlockBoard = imitationBlockBoard;
     }
 
-    public ArrayList<String> getVotes() {
-        return votes;
+    public List<String> getVotes() {
+        return this.votes;
     }
 
     public void setVotes(ArrayList<String> votes) {
         this.votes = votes;
+    }
+
+    public Long getId() {
+        return this.id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public  void addPlayerToGame(Player player){
@@ -106,7 +128,7 @@ public class Game {
         this.players.remove(player);
     }
 
-    public void randomise(ArrayList arrayList){
+    public void randomise(List arrayList){
         Collections.shuffle(arrayList);
     }
 

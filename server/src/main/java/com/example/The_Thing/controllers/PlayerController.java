@@ -28,6 +28,5 @@ public class PlayerController {
         return new ResponseEntity<>(playersRepository.findById(id), HttpStatus.OK);
     }
 
-    @PostMapping(value =)
 
 }
