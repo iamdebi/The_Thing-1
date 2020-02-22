@@ -60,7 +60,7 @@ public class DataLoader implements ApplicationRunner {
         Player player4 = new Player("Debbie");
         playerRepository.save(player4);
 
-        Player player5 = new Player("Badonkadonk");
+        Player player5 = new Player("Michael");
         playerRepository.save(player5);
 
     }

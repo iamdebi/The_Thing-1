@@ -140,15 +140,67 @@ public class Game {
         return this.aliens.size();
     }
 
-    public void populateAliens(){
+    public void populateTeams(){
+
+        //randomise players array.
         randomise(this.players);
-         Player alien1 = this.players.get(0);
-         Player alien2 = this.players.get(1);
-         this.aliens.add(alien1);
-         this.aliens.add(alien2);
+        // set playerCount to int variable in order pass into subList
+        int playerCount = this.players.size();
+
+        if ( (playerCount == 5) || (playerCount == 6) ){
+
+            // subList(fromIndex, toIndex)
+            // make a sublist for EACH team based on index (0 & 1 for aliens)
+            ArrayList<Player> aliensSubList = new ArrayList<Player>(players.subList(0, 2));
+            // (2 - playerCount)
+            ArrayList<Player> humansSubList = new ArrayList<Player>(players.subList(2, playerCount));
+
+            //for each Player in aliens subList, add to aliens ArrayList
+            for (Player alien : aliensSubList) {
+                this.aliens.add(alien);
+            }
+
+            //for each Player in humans subList, add to humans ArrayList
+            for (Player human : humansSubList) {
+                this.humans.add(human);
+            }
+        }
+        else if ( (playerCount == 7) || (playerCount == 8) ){
+
+            // subList(fromIndex, toIndex)
+            // make a sublist for EACH team based on index (0,1 & 2 for aliens)
+            ArrayList<Player> aliensSubList = new ArrayList<Player>(players.subList(0, 3));
+            // (3 - playerCount)
+            ArrayList<Player> humansSubList = new ArrayList<Player>(players.subList(3, playerCount));
+
+            //for each Player in aliens subList, add to aliens ArrayList
+            for (Player alien : aliensSubList) {
+                this.aliens.add(alien);
+            }
+
+            //for each Player in humans subList, add to humans ArrayList
+            for (Player human : humansSubList) {
+                this.humans.add(human);
+            }
+        }
+        else if( (playerCount == 9) || (playerCount == 10) ){
+
+            // subList(fromIndex, toIndex)
+            // make a sublist for EACH team based on index (0,1,2 & 3 for aliens)
+            ArrayList<Player> aliensSubList = new ArrayList<Player>(players.subList(0, 4));
+            // (4 - playerCount)
+            ArrayList<Player> humansSubList = new ArrayList<Player>(players.subList(4, playerCount));
+
+            //for each Player in aliens subList, add to aliens ArrayList
+            for (Player alien : aliensSubList) {
+                this.aliens.add(alien);
+            }
+
+            //for each Player in humans subList, add to humans ArrayList
+            for (Player human : humansSubList) {
+                this.humans.add(human);
+            }
+        }
     }
-
-
-
 
 }
