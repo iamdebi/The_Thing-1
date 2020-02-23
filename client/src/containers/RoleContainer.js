@@ -29,7 +29,8 @@ class RoleContainer extends Component {
   }
 
   getCoCaptainId(event) {
-    return event.target.value;
+    const id = event.target.value;
+    // this.props.onUpdate(id, this.state.coCaptain);
   }
 
   setCoCaptainDropDown() {

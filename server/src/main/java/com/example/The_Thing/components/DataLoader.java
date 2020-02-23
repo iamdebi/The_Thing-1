@@ -48,8 +48,12 @@ public class DataLoader implements ApplicationRunner {
 
         Player player1 = new Player("Paul");
         playerRepository.save(player1);
+        player1.setCaptain(true);
+        playerRepository.save(player1);
 
         Player player2 = new Player("Brendan");
+        playerRepository.save(player2);
+        player2.setCoCaptain(true);
         playerRepository.save(player2);
 
         Player player3 = new Player("Becky");

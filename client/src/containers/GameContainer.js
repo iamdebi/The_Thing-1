@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import Request from "../helpers/request";
 // import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import GameViewContainer from "./GameViewContainer";
@@ -12,9 +12,10 @@ class GameContainer extends Component {
       cards: [],
       playersPopulated: false
     };
-    // this.findPirateById = this.findPirateById.bind(this);
+    // this.findPlayerById = this.findPlayerById.bind(this);
     this.findCaptain = this.findCaptain.bind(this);
     this.findCoCaptain = this.findCoCaptain.bind(this);
+    this.handleUpdate = this.handleUpdate.bind(this);
     // this.handleDelete = this.handleDelete.bind(this);
   }
 
@@ -68,6 +69,7 @@ class GameContainer extends Component {
           <RoleContainer
             className="role-contianer"
             players={this.state.players}
+            onUpdate={this.handleUpdate}
           ></RoleContainer>
         </div>
               
