@@ -12,6 +12,10 @@ class GameContainer extends Component {
       cards: [],
       playersPopulated: false
     };
+    // this.findPirateById = this.findPirateById.bind(this);
+    this.findCaptain = this.findCaptain.bind(this);
+    this.findCoCaptain = this.findCoCaptain.bind(this);
+    // this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount() {
@@ -28,9 +32,32 @@ class GameContainer extends Component {
     });
   }
 
+  findplayerById(id) {
+    return this.state.players.find(player => {
+      return player.id === parseInt(id);
+    });
+  }
+
+  findCaptain() {
+    return this.state.players.find(player => {
+      return player.captain === true;
+    });
+  }
+
+  findCoCaptain() {
+    return this.state.players.find(player => {
+      return player.cocaptain === true;
+    });
+  }
+
+  handleUpdate(player, id) {
+    const request = new Request();
+    request.patch("/api/players/" + id, player).then(() => {});
+  }
+
   render() {
     return this.state.playersPopulated ? (
-      <Fragment className="game-container">
+      <section className="game-container">
                 
         <GameViewContainer
           cards={this.state.cards}
@@ -44,7 +71,7 @@ class GameContainer extends Component {
           ></RoleContainer>
         </div>
               
-      </Fragment>
+      </section>
     ) : (
       <p>Loading ....</p>
     );
