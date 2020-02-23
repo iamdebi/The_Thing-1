@@ -42,15 +42,18 @@ class RoleContainer extends Component {
         </option>
       );
     });
-    return <select onChange={this.setCoCaptainState}>{options}</select>;
+    return <select onChange={this.getCoCaptainId}>{options}</select>;
   }
 
-  setCoCaptainState() {
-    const id = this.getCoCaptainId();
-    const player = this.state.players.filter(player => player.id === id);
-    console.log(player);
-    return player;
-  }
+  //   Being worked on
+  //   Trying to get id to set state coCaptain to the current selected cocaptain
+  //
+  //   setCoCaptainState() {
+  //     const id = this.getCoCaptainId();
+  //     const player = this.state.players.filter(player => player.id === id);
+  //     console.log(player);
+  //     return player;
+  //   }
 
   render() {
     if (!this.state.captain) {
