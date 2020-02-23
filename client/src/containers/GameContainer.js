@@ -30,13 +30,19 @@ class GameContainer extends Component {
 
   render() {
     return this.state.playersPopulated ? (
-      <Fragment>
+      <Fragment className="game-container">
                 
         <GameViewContainer
           cards={this.state.cards}
           players={this.state.players}
         ></GameViewContainer>
-                <RoleContainer players={this.state.players}></RoleContainer>
+                
+        <div>
+          <RoleContainer
+            className="role-contianer"
+            players={this.state.players}
+          ></RoleContainer>
+        </div>
               
       </Fragment>
     ) : (
