@@ -1,4 +1,7 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import VoteScreen from '../components/GameComponents/VoteScreen';
+
 
 class GameViewContainer extends Component {
   constructor(props) {
@@ -14,8 +17,20 @@ class GameViewContainer extends Component {
     };
   }
   render() {
-    return <p>I am the game GameViewContainer</p>;
-  }
+    return (
+    <Router>
+      <Fragment>
+        <Switch>
+
+        <Route
+          path="/thething/vote"
+          render={() => <VoteScreen></VoteScreen>}
+          />
+
+        </Switch>
+      </Fragment>
+    </Router>
+  )}
 }
 
 export default GameViewContainer;

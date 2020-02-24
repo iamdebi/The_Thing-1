@@ -45,6 +45,11 @@ class MainContainer extends Component {
           />
 
           <Route
+            path="/thething/vote"
+            render={() => <GameContainer></GameContainer>}
+          />
+
+          <Route
             path="/thething"
             render={() => <PreGameContainer></PreGameContainer>}
           />
