@@ -40,7 +40,7 @@ class GameViewContainer extends Component {
 
             <Route
               path="/thething/game"
-              render={() => <GameBoards></GameBoards>}
+              render={() => <GameBoards immitationsBlockedBoard={this.state.immitationsBlockedBoard} immitationsPassBoard={this.state.immitationsPassBoard}></GameBoards>}
             />
           </Switch>
         </Fragment>
