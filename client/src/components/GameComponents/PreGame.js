@@ -17,9 +17,10 @@ const PreGame = (props) => {
           <p>The goal of the <u>aliens</u>, which is made up of the alien leader, The Thing, and at least one accomplice, is to remain hidden long enough to successfully imitate 5 times.<br /> Do this by playing imitation success cards to the board.</p>
 
           <h3><u>Each Round</u></h3>
-          <p>A Captain will be assigned. They will choose a Co-Captain. All players, even the Captain and Co-Captain, will vote on this team.<br /> Majority wins, ties count as unsuccessful votes.<br /><br />If the team is not approved, the failed vote tracker increases. If there are <b>3 unsuccesful votes in a row</b> a random imitation card is played to the board.<br /><br /> If the team is approved the <b>Captain</b> will draw a hand of 3 cards made of <b>Imitation Blocked</b> and <b>Imitation Successful</b> cards.<br /> They will discard one and pass the remaining two to the <b>Co-Captain</b> who will choose a card to <b>play to the board</b></p>
+          <p>A Captain will be assigned. They will choose a Co-Captain. <br />
+          The <b>Captain</b> will draw a hand of 3 cards made of <b>Imitation Blocked</b> and <b>Imitation Successful</b> cards.<br /> They will discard one and pass the remaining two to the <b>Co-Captain</b> who will choose a card to <b>play to the board</b></p>
 
-          <h3>If The Thing is voted Co-Captain <u>after</u> 4 Imitation Successful cards have been played to the board;<br /> the aliens automatically win.</h3>
+          <h3>If The Thing is chosen as Co-Captain <u>after</u> 4 Imitation Successful cards have been played to the board;<br /> the aliens automatically win.</h3>
           <br />
           <button onClick={props.updateSwitcher}>Enter Player Names</button>
         </div>
