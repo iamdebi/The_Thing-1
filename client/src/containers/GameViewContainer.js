@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import GameBoards from '../components/GameComponents/GameBoards';
 
 class GameViewContainer extends Component {
   constructor(props) {
