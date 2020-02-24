@@ -33,7 +33,7 @@ class GameContainer extends Component {
 
   handleUpdate(player, id) {
     const request = new Request();
-    request.patch("/api/players/" + id, player).then(() => {});
+    request.patch("/api/players/" + id, player);
   }
 
   render() {

@@ -12,7 +12,6 @@ class RoleContainer extends Component {
     this.setCoCaptainDropDown = this.setCoCaptainDropDown.bind(this);
     this.getCoCaptain = this.getCoCaptain.bind(this);
     this.setCoCaptain = this.setCoCaptain.bind(this);
-    this.handleUpdate = this.handleUpdate.bind(this);
   }
   componentDidMount() {
     this.getCaptain();
@@ -34,21 +33,14 @@ class RoleContainer extends Component {
       }
     });
   }
-  handleUpdate(player, id) {
-    const request = new Request();
-    request.patch("/api/players/" + id, player).then(() => {});
-  }
 
-  setCoCaptain(event) {
-    const players = this.state.players;
-    const id = parseInt(event.target.value);
-    const player = players.find(player => {
+  findPlayerById(id) {
+    return this.state.players.find(player => {
       return player.id === id;
     });
-    if (player.coCaptain === true) {
-      this.setState({ coCaptain: false });
-    }
-    this.setState({ coCaptain: player });
+  }
+
+  restCoCaptain(player) {
     this.setState({
       coCaptain: {
         name: player.name,
@@ -59,7 +51,19 @@ class RoleContainer extends Component {
         vote: player.vote
       }
     });
-    this.handleUpdate(player, id);
+  }
+
+  setCoCaptain(event) {
+    const previousPlayerID = this.state.coCaptain.id;
+    const previousPlayer = this.findPlayerById(previousPlayerID);
+    const id = parseInt(event.target.value);
+    const player = this.findPlayerById(id);
+    this.setState({ coCaptain: player });
+    this.restCoCaptain(player);
+    player.coCaptain = true;
+    previousPlayer.coCaptain = false;
+    this.props.onUpdate(player, id);
+    this.props.onUpdate(previousPlayer, previousPlayerID);
   }
 
   setCoCaptainDropDown() {
