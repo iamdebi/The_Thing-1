@@ -12,7 +12,7 @@ class RoleContainer extends Component {
     this.getCaptain = this.getCaptain.bind(this);
     this.setCoCaptainDropDown = this.setCoCaptainDropDown.bind(this);
     this.getCoCaptain = this.getCoCaptain.bind(this);
-    // this.coCaptain = this.coCaptain.bind(this);
+    this.setCoCaptain = this.setCoCaptain.bind(this);
   }
 
   componentDidMount() {
@@ -38,9 +38,18 @@ class RoleContainer extends Component {
     });
   }
 
+  setCoCaptain(event) {
+    const players = this.state.players;
+    const id = parseInt(event.target.value);
+    const player = players.find(player => {
+      return player.id === id;
+    });
+    console.log(player);
+    this.setState({ coCaptain: player });
+  }
+
   setCoCaptainDropDown() {
     const players = this.state.players;
-
     const options = players.map((player, index) => {
       return (
         <option name={player.id} key={index} value={player.id}>
@@ -51,7 +60,7 @@ class RoleContainer extends Component {
     return (
       <select
         defaultValue={this.state.coCaptain.id}
-        onChange={this.getCoCaptain}
+        onChange={this.setCoCaptain}
       >
         {options}
       </select>
