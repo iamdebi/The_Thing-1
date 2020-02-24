@@ -22,7 +22,6 @@ class RoleContainer extends Component {
     const players = this.state.players;
     players.map((player, index) => {
       if (player.captain === true) {
-        console.log(player);
         return this.setState({ captain: player });
       }
     });
