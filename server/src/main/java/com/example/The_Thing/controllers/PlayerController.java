@@ -46,5 +46,10 @@ public class PlayerController {
         return new ResponseEntity<>(player, HttpStatus.CREATED);
     }
 
+    @DeleteMapping(value = "/players")
+    void deleteAllPlayers() {
+        playerRepository.deleteAll();
+    }
+
 
 }

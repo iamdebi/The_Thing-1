@@ -10,6 +10,14 @@ class Request {
     });
   }
 
+  post(url, payload) {
+    return fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    });
+  }
+
   patch(url, payload) {
     return fetch(url, {
       method: "PATCH",
@@ -17,5 +25,13 @@ class Request {
       body: JSON.stringify(payload)
     });
   }
+
+  deleteAll(url) {
+    return fetch(url, {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" }
+    });
+  }
+  
 }
 export default Request;

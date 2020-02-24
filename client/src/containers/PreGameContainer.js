@@ -2,6 +2,7 @@ import React, { Fragment, Component } from "react";
 import PreGame from "../components/GameComponents/PreGame";
 import CreatePlayerForm from "../components/GameComponents/CreatePlayerForm";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Request from "../helpers/request";
 
 
 class PreGameContainer extends Component {
@@ -12,15 +13,26 @@ class PreGameContainer extends Component {
     }
 
     this.updateSwitcher = this.updateSwitcher.bind(this)
+    this.handlePost = this.handlePost.bind(this);
+  }
+
+  componentDidMount() {
+    const request = new Request();
+    const deletePromise = request.deleteAll("/api/players");
   }
 
   updateSwitcher(){
     this.setState({PreGameFormSwitcher: !this.PreGameFormSwitcher})
   }
 
+  handlePost(player) {
+    const request = new Request();
+    request.post("/api/players", player)
+  }
+
   render(){
     return this.state.PreGameFormSwitcher ? (
-      <CreatePlayerForm/>
+      <CreatePlayerForm onPost={this.handlePost}/>
     ) : (
     <PreGame updateSwitcher={this.updateSwitcher} />
     )
