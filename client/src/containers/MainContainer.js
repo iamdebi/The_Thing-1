@@ -34,7 +34,7 @@ class MainContainer extends Component {
         <Fragment>
           <Switch>
             <Route
-              path="/setup"
+              path="/thething/setup"
               render={() => <PreGameContainer></PreGameContainer>}
             />
             <Route
