@@ -13,13 +13,7 @@ const PreGame = (props) => {
         <h4>Each player will be assigned a party: Human or Alien.</h4>
         <h4>The goal of the humans is to block 5 imitation attempts by The Thing or it's alien accomplice. Do this by playing imitation blocked cards to the board. </h4>
         <h4>The goal of the aliens is to remain hidden long enough to successfully imitate 5 times.</h4>
-
-
-
-
       </div>
-      <img src="https://images.alphacoders.com/794/794858.jpg"/>
-
     </Fragment>
   )
 }

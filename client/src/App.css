@@ -33,7 +33,6 @@
 }
 
 .pregame-component {
-  height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -41,10 +40,11 @@
 }
 
 #intro-text{
+  height: 100vh;
+  background-image: url("https://images.alphacoders.com/794/794858.jpg");
   font-family: albertus;
   color: white;
   position: relative;
-  top: 500px;
-  left: 50px;
+  margin: none;
 
 }
