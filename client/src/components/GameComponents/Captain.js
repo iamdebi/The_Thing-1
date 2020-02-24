@@ -1,6 +1,6 @@
 import React from "react";
 
-const captianComponet = props => {
+const captainComponet = props => {
   if (!props.captain) {
     return "Loading...";
   }
@@ -13,4 +13,4 @@ const captianComponet = props => {
   );
 };
 
-export default captianComponet;
+export default captainComponet;
