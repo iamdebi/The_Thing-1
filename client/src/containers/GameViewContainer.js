@@ -1,4 +1,9 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Captain from "../components/GameComponents/CaptainChoiceScreen";
+import CoCaptain from "../components/GameComponents/CoCaptainChoiceScreen";
+import GameBoards from "../components/GameComponents/GameBoards";
+import PlayerDetails from "../components/GameComponents/PlayerInfo";
 
 class GameViewContainer extends Component {
   constructor(props) {
@@ -14,7 +19,33 @@ class GameViewContainer extends Component {
     };
   }
   render() {
-    return <p>I am the game GameViewContainer</p>;
+    return (
+      <Router>
+        <Fragment>
+          <Switch>
+            <Route
+              path="/thething/game/:id"
+              render={() => <PlayerDetails></PlayerDetails>}
+            />
+
+            <Route
+              path="/thething/captain"
+              render={() => <Captain></Captain>}
+            />
+
+            <Route
+              path="/thething/captain"
+              render={() => <CoCaptain></CoCaptain>}
+            />
+
+            <Route
+              path="/thething/game"
+              render={() => <GameBoards></GameBoards>}
+            />
+          </Switch>
+        </Fragment>
+      </Router>
+    );
   }
 }
 
