@@ -29,12 +29,12 @@ class GameViewContainer extends Component {
             />
 
             <Route
-              path="/thething/captain"
+              path="/thething/game/captain"
               render={() => <Captain></Captain>}
             />
 
             <Route
-              path="/thething/captain"
+              path="/thething/game/cocaptain"
               render={() => <CoCaptain></CoCaptain>}
             />
 
