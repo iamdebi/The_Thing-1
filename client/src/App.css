@@ -46,5 +46,8 @@
   color: white;
   position: relative;
   margin: none;
+}
 
+h1{
+  margin: inherit;
 }
