@@ -39,17 +39,22 @@
 }
 
 .PlayerInputFormWrapper {
+  background-color: #282c34;
   text-align: center;
-  border: solid;
   justify-content: center;
   display: flex;
+  height: 100vh;
 }
 
 .PlayerInputForm {
+  color: #ffffff;
+  border: solid;
   display: flex;
   flex-direction: column;
   max-width: 25%;
+  max-height: 30%;
   align-items: center;
+  margin-top: 2%;
 }
 
 #intro-text {
