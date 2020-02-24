@@ -31,3 +31,20 @@
 .game-container {
   display: flex;
 }
+
+.pregame-component {
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+}
+
+#intro-text{
+  font-family: albertus;
+  color: white;
+  position: relative;
+  top: 500px;
+  left: 50px;
+
+}
