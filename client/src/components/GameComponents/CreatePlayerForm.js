@@ -29,22 +29,116 @@ class CreatePlayerForm extends Component {
         captain: false,
         coCaptain: false,
         vote: ""
+      },
+
+      player4: {
+        name: "",
+        role: "",
+        party: "",
+        captain: false,
+        coCaptain: false,
+        vote: ""
+      },
+
+      player5: {
+        name: "",
+        role: "",
+        party: "",
+        captain: false,
+        coCaptain: false,
+        vote: ""
+      },
+
+      player6: {
+        name: "",
+        role: "",
+        party: "",
+        captain: false,
+        coCaptain: false,
+        vote: ""
       }
 
     }
 
-    this.handleName = this.handleName.bind(this);
+    this.handlePlayer1 = this.handlePlayer1.bind(this);
+    this.handlePlayer2 = this.handlePlayer2.bind(this);
+    this.handlePlayer3 = this.handlePlayer3.bind(this);
+    this.handlePlayer4 = this.handlePlayer4.bind(this);
+    this.handlePlayer5 = this.handlePlayer5.bind(this);
+    this.handlePlayer6 = this.handlePlayer6.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleName(event) {
-    this.setState({player1:{
+  handlePlayer1(event) {
+    this.setState({
+      player1: {
       name: event.target.value,
       role: "",
       party: "",
       captain: false,
       coCaptain: false,
-      vote: ""}})
+      vote: ""
+    } })
+  }
+
+  handlePlayer2(event) {
+    this.setState({
+      player2: {
+      name: event.target.value,
+      role: "",
+      party: "",
+      captain: false,
+      coCaptain: false,
+      vote: ""
+    } })
+  }
+
+  handlePlayer3(event) {
+    this.setState({
+      player3: {
+      name: event.target.value,
+      role: "",
+      party: "",
+      captain: false,
+      coCaptain: false,
+      vote: ""
+    } })
+  }
+
+  handlePlayer4(event) {
+    this.setState({
+      player4: {
+      name: event.target.value,
+      role: "",
+      party: "",
+      captain: false,
+      coCaptain: false,
+      vote: ""
+    } })
+  }
+
+  handlePlayer5(event) {
+    this.setState({
+      player5: {
+      name: event.target.value,
+      role: "",
+      party: "",
+      captain: false,
+      coCaptain: false,
+      vote: ""
+    } })
+  }
+
+  handlePlayer6(event) {
+    this.setState({
+      player6: {
+      name: event.target.value,
+      role: "",
+      party: "",
+      captain: false,
+      coCaptain: false,
+      vote: ""
+    } })
   }
 
   handleSubmit(event) {
@@ -65,10 +159,13 @@ class CreatePlayerForm extends Component {
     return (
       <div>
       <form onSubmit={this.handleSubmit}>
-      <input onChange={this.handleName} type="text" placeholder="Name" name="player1" value={this.state.player1.name}/>
-      <input onChange={this.handleName} type="text" placeholder="Name" name="player2" value={this.state.player2.name}/>
-      <input onChange={this.handleName} type="text" placeholder="Name" name="player3" value={this.state.player3.name}/>
-      <button type="submit">Save</button>
+      <input onChange={this.handlePlayer1} type="text" placeholder="Name" name="player1" value={this.state.player1.name}/>
+      <input onChange={this.handlePlayer2} type="text" placeholder="Name" name="player2" value={this.state.player2.name}/>
+      <input onChange={this.handlePlayer3} type="text" placeholder="Name" name="player3" value={this.state.player3.name}/>
+      <input onChange={this.handlePlayer4} type="text" placeholder="Name" name="player4" value={this.state.player4.name}/>
+      <input onChange={this.handlePlayer5} type="text" placeholder="Name" name="player5" value={this.state.player5.name}/>
+      <input onChange={this.handlePlayer6} type="text" placeholder="Name" name="player6" value={this.state.player6.name}/>
+      <button type="submit">Submit</button>
       </form>
       </div>
     )
