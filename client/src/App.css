@@ -36,10 +36,9 @@
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-
 }
 
-#intro-text{
+#intro-text {
   height: 100vh;
   background-image: url("https://images.alphacoders.com/794/794858.jpg");
   font-family: albertus;

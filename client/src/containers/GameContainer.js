@@ -13,9 +13,6 @@ class GameContainer extends Component {
       playersPopulated: false
     };
 
-    this.findPlayerById = this.findPlayerById.bind(this);
-    this.findCaptain = this.findCaptain.bind(this);
-    this.findCoCaptain = this.findCoCaptain.bind(this);
     this.handleUpdate = this.handleUpdate.bind(this);
     // this.handleDelete = this.handleDelete.bind(this);
   }
@@ -31,26 +28,6 @@ class GameContainer extends Component {
         cards: data[1],
         playersPopulated: true
       });
-    });
-  }
-
-  findPlayerById(id) {
-    console.log(this.state.players);
-
-    // this.state.players.find(player => {
-    //   return player.id === parseInt(id);
-    // });
-  }
-
-  findCaptain() {
-    return this.state.players.find(player => {
-      return player.captain === true;
-    });
-  }
-
-  findCoCaptain() {
-    return this.state.players.find(player => {
-      return player.cocaptain === true;
     });
   }
 
@@ -73,7 +50,6 @@ class GameContainer extends Component {
             className="role-contianer"
             players={this.state.players}
             onUpdate={this.handleUpdate}
-            findPlayerById={this.findPlayerById}
           ></RoleContainer>
         </div>
               
