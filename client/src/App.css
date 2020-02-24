@@ -38,6 +38,12 @@
   position: relative;
 }
 
+.PlayerInputForm{
+  text-align: center;
+  border: solid;
+
+}
+
 #intro-text {
   height: 100vh;
   background-image: url("https://images.alphacoders.com/794/794858.jpg");
