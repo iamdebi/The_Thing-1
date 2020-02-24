@@ -44,7 +44,6 @@ class RoleContainer extends Component {
     const player = players.find(player => {
       return player.id === id;
     });
-    console.log(player);
     this.setState({ coCaptain: player });
   }
 
