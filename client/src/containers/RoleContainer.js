@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from "react";
+import Request from "../helpers/request";
 
 class RoleContainer extends Component {
   constructor(props) {
@@ -38,6 +39,11 @@ class RoleContainer extends Component {
     });
   }
 
+  handleUpdate(player, id) {
+    const request = new Request();
+    request.patch("/api/players/" + id, player).then(() => {});
+  }
+
   setCoCaptain(event) {
     const players = this.state.players;
     const id = parseInt(event.target.value);
@@ -45,6 +51,7 @@ class RoleContainer extends Component {
       return player.id === id;
     });
     this.setState({ coCaptain: player });
+    this.handleUpdate(player, id);
   }
 
   setCoCaptainDropDown() {
