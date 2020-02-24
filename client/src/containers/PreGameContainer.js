@@ -4,40 +4,33 @@ import CreatePlayerForm from "../components/GameComponents/CreatePlayerForm";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Request from "../helpers/request";
 
-
 class PreGameContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
       PreGameFormSwitcher: false
-    }
+    };
 
-    this.updateSwitcher = this.updateSwitcher.bind(this)
+    this.updateSwitcher = this.updateSwitcher.bind(this);
     this.handlePost = this.handlePost.bind(this);
   }
 
-  componentDidMount() {
-    const request = new Request();
-    const deletePromise = request.deleteAll("/api/players");
-  }
-
-  updateSwitcher(){
-    this.setState({PreGameFormSwitcher: !this.PreGameFormSwitcher})
+  updateSwitcher() {
+    this.setState({ PreGameFormSwitcher: !this.PreGameFormSwitcher });
   }
 
   handlePost(player) {
     const request = new Request();
-    request.post("/api/players", player)
+    request.post("/api/players", player);
   }
 
-  render(){
+  render() {
     return this.state.PreGameFormSwitcher ? (
-      <CreatePlayerForm onPost={this.handlePost}/>
+      <CreatePlayerForm onPost={this.handlePost} />
     ) : (
-    <PreGame updateSwitcher={this.updateSwitcher} />
-    )
+      <PreGame updateSwitcher={this.updateSwitcher} />
+    );
   }
-
 }
 
 export default PreGameContainer;
