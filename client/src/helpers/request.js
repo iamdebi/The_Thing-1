@@ -10,9 +10,9 @@ class Request {
     });
   }
 
-  post(url, payload) {
+  patch(url, payload) {
     return fetch(url, {
-      method: "POST",
+      method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload)
     });

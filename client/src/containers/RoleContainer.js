@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from "react";
 import Request from "../helpers/request";
-
 class RoleContainer extends Component {
   constructor(props) {
     super(props);
@@ -9,18 +8,16 @@ class RoleContainer extends Component {
       captain: null,
       coCaptain: null
     };
-
     this.getCaptain = this.getCaptain.bind(this);
     this.setCoCaptainDropDown = this.setCoCaptainDropDown.bind(this);
     this.getCoCaptain = this.getCoCaptain.bind(this);
     this.setCoCaptain = this.setCoCaptain.bind(this);
+    this.handleUpdate = this.handleUpdate.bind(this);
   }
-
   componentDidMount() {
     this.getCaptain();
     this.getCoCaptain();
   }
-
   getCaptain() {
     const players = this.state.players;
     players.map((player, index) => {
@@ -29,7 +26,6 @@ class RoleContainer extends Component {
       }
     });
   }
-
   getCoCaptain() {
     const players = this.state.players;
     players.map((player, index) => {
@@ -38,7 +34,6 @@ class RoleContainer extends Component {
       }
     });
   }
-
   handleUpdate(player, id) {
     const request = new Request();
     request.patch("/api/players/" + id, player).then(() => {});
@@ -50,7 +45,20 @@ class RoleContainer extends Component {
     const player = players.find(player => {
       return player.id === id;
     });
+    if (player.coCaptain === true) {
+      this.setState({ coCaptain: false });
+    }
     this.setState({ coCaptain: player });
+    this.setState({
+      coCaptain: {
+        name: player.name,
+        role: player.role,
+        party: player.party,
+        captain: player.captain,
+        coCaptain: true,
+        vote: player.vote
+      }
+    });
     this.handleUpdate(player, id);
   }
 
@@ -72,17 +80,16 @@ class RoleContainer extends Component {
       </select>
     );
   }
-
   render() {
     if (!this.state.captain) {
       return null;
     }
-    const name = "name";
+
     return (
       <Fragment>
         <div className="role-wrapper">
           <h2>Captain:</h2>
-          <h4>{this.state.captain[name]}</h4>
+          <h4>{this.state.captain.name}</h4>
           <h3>CoCaptain</h3>
           {this.setCoCaptainDropDown()}
         </div>
@@ -90,5 +97,4 @@ class RoleContainer extends Component {
     );
   }
 }
-
 export default RoleContainer;
