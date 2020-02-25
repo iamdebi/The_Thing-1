@@ -83,8 +83,10 @@ class MainContainer extends Component {
   }
 
   discardCard(id) {
-    const card = this.findCardInPlay(id);
-    this.setState({ cardsInPlay: this.cardsInPlay.filter(card => !card) });
+    const discardCard = this.findCardInPlay(id);
+    this.setState({
+      cardsInPlay: this.cardsInPlay.filter(card => card != discardCard)
+    });
   }
 
   restCoCaptain(player) {
