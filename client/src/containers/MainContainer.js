@@ -140,6 +140,7 @@ class MainContainer extends Component {
                 path="/thething/captain"
                 render={() => (
                   <CaptainChoiceScreen
+                    discard={this.discardCard}
                     draw3={this.draw3}
                     cardsInPlay={this.state.cardsInPlay}
                     players={this.state.players}

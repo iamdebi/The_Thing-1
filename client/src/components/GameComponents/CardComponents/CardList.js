@@ -3,11 +3,10 @@ import Card from "./Card";
 import { Link } from "react-router-dom";
 
 const CardList = props => {
-  if (props.cards.length === 0) {
-    return <p>Loading .....</p>;
+  if (props.cardsInPlay.length === 0) {
   }
 
-  const cards = props.cards.map((card, index) => {
+  const cards = props.cardsInPlay.map((card, index) => {
     return (
       <div>
         <li key={index} className="component-item">
