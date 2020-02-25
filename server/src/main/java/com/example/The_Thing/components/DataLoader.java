@@ -28,6 +28,21 @@ public class DataLoader implements ApplicationRunner {
         Card imitationBlocked = new Card("blocked");
         cardRepository.save(imitationBlocked);
 
+        Card imitationBlocked1 = new Card("blocked");
+        cardRepository.save(imitationBlocked1);
+
+        Card imitationBlocked2 = new Card("blocked");
+        cardRepository.save(imitationBlocked2);
+
+        Card imitationBlocked3 = new Card("blocked");
+        cardRepository.save(imitationBlocked3);
+
+        Card imitationBlocked4 = new Card("blocked");
+        cardRepository.save(imitationBlocked4);
+
+        Card imitationBlocked5 = new Card("blocked");
+        cardRepository.save(imitationBlocked5);
+
         Card imitationPassed = new Card("passed");
         cardRepository.save(imitationPassed);
 
@@ -45,6 +60,18 @@ public class DataLoader implements ApplicationRunner {
 
         Card imitationPassed6 = new Card("passed");
         cardRepository.save(imitationPassed6);
+
+        Card imitationPassed7 = new Card("passed");
+        cardRepository.save(imitationPassed7);
+
+        Card imitationPassed8 = new Card("passed");
+        cardRepository.save(imitationPassed8);
+
+        Card imitationPassed9 = new Card("passed");
+        cardRepository.save(imitationPassed9);
+
+        Card imitationPassed10 = new Card("passed");
+        cardRepository.save(imitationPassed10);
 
         Player player1 = new Player("Paul");
         playerRepository.save(player1);
