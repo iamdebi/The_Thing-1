@@ -7,6 +7,8 @@ import CoCaptainChoiceScreen from "../components/GameComponents/CoCaptainChoiceS
 import GameBoards from "../components/GameComponents/GameBoards";
 import PlayerDetails from "../components/GameComponents/PlayerComponents/PlayerInfo";
 import PlayersList from "../components/GameComponents/PlayerComponents/PlayersList";
+import Card from "../components/GameComponents/CardComponents/Card";
+import CardList from "../components/GameComponents/CardComponents/CardList";
 import Request from "../helpers/request";
 
 class MainContainer extends Component {
@@ -76,7 +78,11 @@ class MainContainer extends Component {
               <Route
                 exact
                 path="/thething/cocaptain"
-                render={() => <CoCaptainChoiceScreen></CoCaptainChoiceScreen>}
+                render={() => (
+                  <CoCaptainChoiceScreen
+                    cards={this.state.cardsInPlay}
+                  ></CoCaptainChoiceScreen>
+                )}
               />
 
               <Route
@@ -93,6 +99,18 @@ class MainContainer extends Component {
                     immitationsPassBoard={this.state.immitationsPassBoard}
                   ></GameBoards>
                 )}
+              />
+
+              <Route
+                exact
+                path="/thething/cards/id"
+                render={() => <Card></Card>}
+              />
+
+              <Route
+                exact
+                path="/thething/cards"
+                render={() => <CardList cards={this.state.cards}></CardList>}
               />
 
               <Route
