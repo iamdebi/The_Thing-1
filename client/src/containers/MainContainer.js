@@ -65,8 +65,8 @@ class MainContainer extends Component {
 
   draw3(){
     let shuffledCards = this.shuffle(this.state.cards)
-    this.state.cardsInPlay = shuffledCards.slice(0,3);
-    return this.state.cardsInPlay;
+
+    return this.setState({cardsInPlay : shuffledCards.slice(0,3)})
   }
 
   render() {
@@ -94,6 +94,7 @@ class MainContainer extends Component {
               <Route
                 exact
                 path="/thething/cocaptain"
+                render={() => <CoCaptainChoiceScreen ></CoCaptainChoiceScreen>}
                 render={() => (
                   <CoCaptainChoiceScreen
                     cards={this.state.cardsInPlay}
@@ -104,7 +105,7 @@ class MainContainer extends Component {
               <Route
                 exact
                 path="/thething/captain"
-                render={() => <CaptainChoiceScreen cardsInPlay={this.state.cardsInPlay} players={this.state.players}></CaptainChoiceScreen>}
+                render={() => <CaptainChoiceScreen draw3={this.draw3} cardsInPlay={this.state.cardsInPlay} players={this.state.players}></CaptainChoiceScreen>}
               />
 
               <Route
