@@ -84,7 +84,6 @@ class MainContainer extends Component {
 
   discardCard(id) {
     const discardCard = this.findCardInPlay(id);
-
     this.setState({
       cardsInPlay: this.state.cardsInPlay.filter(card => card != discardCard)
     });
