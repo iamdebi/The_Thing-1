@@ -30,6 +30,7 @@ class MainContainer extends Component {
     this.draw3 = this.draw3.bind(this);
     this.discardCard = this.discardCard.bind(this);
     this.addToGameBoard = this.addToGameBoard.bind(this);
+    this.clearCardsInPlay = this.clearCardsInPlay.bind(this);
   }
 
   componentDidMount() {
@@ -86,16 +87,23 @@ class MainContainer extends Component {
   discardCard(id) {
     const discardCard = this.findCardInPlay(id);
     this.setState({
-      cardsInPlay: this.state.cardsInPlay.filter(card => card != discardCard)
+      cardsInPlay: this.state.cardsInPlay.filter(card => card !== discardCard)
     });
   }
 
-  addToGameBoard() {
-    const card = this.state.cardsInPlay[0];
-    if (card.type === "passed") {
-      this.setState({ immitationsPassBoard: this.state.cardsInPlay });
+  clearCardsInPlay() {
+    this.setState({
+      cardsInPlay: []
+    })
+  }
+
+  addToGameBoard(){
+
+    const card = this.state.cardsInPlay[0]
+    if(card.type === "passed"){
+      this.setState({immitationsPassBoard: this.state.cardsInPlay})
     } else {
-      this.setState({ immitationsBlockedBoard: this.state.cardsInPlay });
+      this.setState({immitationsBlockedBoard: this.state.cardsInPlay})
     }
   }
 
@@ -165,6 +173,7 @@ class MainContainer extends Component {
                 path="/thething/board"
                 render={() => (
                   <GameBoards
+                    clearCardsInPlay={this.clearCardsInPlay}
                     cardsInPlay={this.state.cardsInPlay}
                     immitationsBlockedBoard={this.state.immitationsBlockedBoard}
                     immitationsPassBoard={this.state.immitationsPassBoard}
