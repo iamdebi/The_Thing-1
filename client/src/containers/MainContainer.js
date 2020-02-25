@@ -94,15 +94,11 @@ class MainContainer extends Component {
               <Route
                 exact
                 path="/thething/cocaptain"
-<<<<<<< HEAD
-                render={() => <CoCaptainChoiceScreen ></CoCaptainChoiceScreen>}
-=======
                 render={() => (
                   <CoCaptainChoiceScreen
                     cards={this.state.cardsInPlay}
                   ></CoCaptainChoiceScreen>
                 )}
->>>>>>> 3b57c9ffc5c3bda24cb5425e40aa3e4216fd727a
               />
 
               <Route
