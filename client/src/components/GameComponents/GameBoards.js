@@ -2,9 +2,6 @@ import React, { Component, Fragment } from 'react';
 
 const GameBoards = (props) => {
 
-console.log(props);
-
-
   return (
 
     <Fragment>

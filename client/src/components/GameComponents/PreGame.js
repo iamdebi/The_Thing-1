@@ -6,7 +6,7 @@ const PreGame = (props) => {
     <Fragment >
       <section className="pregame-component">
         <div id="intro-text">
-          <h1>The Thing: A hidden traitor game for 5-6 players</h1>
+          <h1>The Thing: A hidden traitor game for 5 players</h1>
 
           <h3><u>Overview</u></h3>
           <p>It is the start of the bleak, desolate winter for researchers manning a claustrophobic, isolated Antarctic outpost when they come into contact with a hostile extraterrestrial lifeform. Bent on assimilating Earth's native species, this being infiltrates the facility — creating a perfect imitation of one of the crew. The staff frantically begin trying to narrow down who is human, and who is not, desperate to purge this alien infection before it can successfully imitate the full team.<br /> <i> And escape </i> </p>
