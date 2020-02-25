@@ -6,7 +6,7 @@ const PreGame = props => {
     <Fragment>
       <section className="pregame-component">
         <div id="intro-text">
-          <h1>The Thing: A hidden traitor game for 5-6 players</h1>
+          <h1>The Thing: A hidden traitor game for 5 players</h1>
 
           <h3>
             <u>Overview</u>

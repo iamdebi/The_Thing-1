@@ -64,9 +64,9 @@ class CreatePlayerForm extends Component {
     this.setState({
       player1: {
         name: event.target.value,
-        role: "",
-        party: "",
-        captain: false,
+        role: "humans",
+        party: "humans",
+        captain: true,
         coCaptain: false,
         vote: ""
       }
@@ -77,10 +77,10 @@ class CreatePlayerForm extends Component {
     this.setState({
       player2: {
         name: event.target.value,
-        role: "",
-        party: "",
+        role: "imitation",
+        party: "aliens",
         captain: false,
-        coCaptain: false,
+        coCaptain: true,
         vote: ""
       }
     });
@@ -90,8 +90,8 @@ class CreatePlayerForm extends Component {
     this.setState({
       player3: {
         name: event.target.value,
-        role: "",
-        party: "",
+        role: "humans",
+        party: "humans",
         captain: false,
         coCaptain: false,
         vote: ""
@@ -103,8 +103,8 @@ class CreatePlayerForm extends Component {
     this.setState({
       player4: {
         name: event.target.value,
-        role: "",
-        party: "",
+        role: "thing",
+        party: "aliens",
         captain: false,
         coCaptain: false,
         vote: ""
@@ -116,14 +116,15 @@ class CreatePlayerForm extends Component {
     this.setState({
       player5: {
         name: event.target.value,
-        role: "",
-        party: "",
+        role: "humans",
+        party: "humans",
         captain: false,
         coCaptain: false,
         vote: ""
       }
     });
   }
+
 
   handleDeleteAll() {
     const request = new Request();
