@@ -56,16 +56,16 @@ class MainContainer extends Component {
   }
 
   shuffle(a) {
-      for (let i = a.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [a[i], a[j]] = [a[j], a[i]];
-      }
-      return a;
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
     }
+    return a;
+  }
 
-  draw3(){
-    let shuffledCards = this.shuffle(this.state.cards)
-    this.state.cardsInPlay = shuffledCards.slice(0,3);
+  draw3() {
+    let shuffledCards = this.shuffle(this.state.cards);
+    this.state.cardsInPlay = shuffledCards.slice(0, 3);
     return this.state.cardsInPlay;
   }
 
@@ -94,21 +94,22 @@ class MainContainer extends Component {
               <Route
                 exact
                 path="/thething/cocaptain"
-<<<<<<< HEAD
-                render={() => <CoCaptainChoiceScreen ></CoCaptainChoiceScreen>}
-=======
                 render={() => (
                   <CoCaptainChoiceScreen
                     cards={this.state.cardsInPlay}
                   ></CoCaptainChoiceScreen>
                 )}
->>>>>>> 3b57c9ffc5c3bda24cb5425e40aa3e4216fd727a
               />
 
               <Route
                 exact
                 path="/thething/captain"
-                render={() => <CaptainChoiceScreen cardsInPlay={this.state.cardsInPlay} players={this.state.players}></CaptainChoiceScreen>}
+                render={() => (
+                  <CaptainChoiceScreen
+                    cardsInPlay={this.state.cardsInPlay}
+                    players={this.state.players}
+                  ></CaptainChoiceScreen>
+                )}
               />
 
               <Route
