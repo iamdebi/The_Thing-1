@@ -85,7 +85,7 @@ class MainContainer extends Component {
   discardCard(id) {
     const discardCard = this.findCardInPlay(id);
     this.setState({
-      cardsInPlay: this.cardsInPlay.filter(card => card != discardCard)
+      cardsInPlay: this.state.cardsInPlay.filter(card => card != discardCard)
     });
   }
 
@@ -130,7 +130,7 @@ class MainContainer extends Component {
                 render={() => <CoCaptainChoiceScreen></CoCaptainChoiceScreen>}
                 render={() => (
                   <CoCaptainChoiceScreen
-                    cards={this.state.cardsInPlay}
+                    cardsInPlay={this.state.cardsInPlay}
                   ></CoCaptainChoiceScreen>
                 )}
               />
