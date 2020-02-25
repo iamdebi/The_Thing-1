@@ -12,7 +12,7 @@ const Card = props => {
   return (
     <Fragment>
       <p>Type: {props.card.type}</p>
-      <button onclick={discard} type="button">
+      <button onClick={discard} type="button">
         Discard Card
       </button>
     </Fragment>
