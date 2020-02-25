@@ -20,8 +20,8 @@ class MainContainer extends Component {
       humans: [],
       cards: [],
       cardsInPlay: [],
-      immitationsBlockedBoard: [],
-      immitationsPassBoard: [],
+      imitationsBlockedBoard: [],
+      imitationsPassBoard: [],
       playersPopulated: false
     };
     this.findPlayerById = this.findPlayerById.bind(this);
@@ -101,9 +101,9 @@ class MainContainer extends Component {
 
     const card = this.state.cardsInPlay[0]
     if(card.type === "passed"){
-      this.setState({immitationsPassBoard: this.state.cardsInPlay})
+      this.setState({imitationsPassBoard: this.state.cardsInPlay})
     } else {
-      this.setState({immitationsBlockedBoard: this.state.cardsInPlay})
+      this.setState({imitationsBlockedBoard: this.state.cardsInPlay})
     }
   }
 
@@ -175,8 +175,8 @@ class MainContainer extends Component {
                   <GameBoards
                     clearCardsInPlay={this.clearCardsInPlay}
                     cardsInPlay={this.state.cardsInPlay}
-                    immitationsBlockedBoard={this.state.immitationsBlockedBoard}
-                    immitationsPassBoard={this.state.immitationsPassBoard}
+                    imitationsBlockedBoard={this.state.imitationsBlockedBoard}
+                    imitationsPassBoard={this.state.imitationsPassBoard}
                   ></GameBoards>
                 )}
               />
@@ -189,9 +189,9 @@ class MainContainer extends Component {
             </Switch>
           </Fragment>
         </Router>
-        <div className="role-contianer">
+        <div className="role-container">
           <RoleContainer
-            className="role-contianer"
+            className="role-container"
             players={this.state.players}
             onUpdate={this.handleUpdate}
           ></RoleContainer>
