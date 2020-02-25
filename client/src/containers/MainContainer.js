@@ -1,12 +1,14 @@
 import React, { Fragment, Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import PreGameContainer from "./PreGameContainer";
-import GameViewContainer from "./GameViewContainer";
+import RoleContainer from "./RoleContainer";
 import CaptainChoiceScreen from "../components/GameComponents/CaptainChoiceScreen";
 import CoCaptainChoiceScreen from "../components/GameComponents/CoCaptainChoiceScreen";
 import GameBoards from "../components/GameComponents/GameBoards";
 import PlayerDetails from "../components/GameComponents/PlayerComponents/PlayerInfo";
 import PlayersList from "../components/GameComponents/PlayerComponents/PlayersList";
+import Card from "../components/GameComponents/CardComponents/Card";
+import CardList from "../components/GameComponents/CardComponents/CardList";
 import Request from "../helpers/request";
 
 class MainContainer extends Component {
@@ -78,7 +80,7 @@ class MainContainer extends Component {
                 path="/thething/players/:id"
                 render={props => {
                   const id = props.match.params.id;
-                  const player = this.findPlayerById(id);
+                  const player = this.findPlayerById(parseInt(id));
                   return <PlayerDetails player={player} />;
                 }}
               />
@@ -86,15 +88,21 @@ class MainContainer extends Component {
                 exact
                 path="/thething/players"
                 render={() => {
-                  console.log("here");
-
                   return <PlayersList players={this.state.players} />;
                 }}
               />
               <Route
                 exact
                 path="/thething/cocaptain"
+<<<<<<< HEAD
                 render={() => <CoCaptainChoiceScreen ></CoCaptainChoiceScreen>}
+=======
+                render={() => (
+                  <CoCaptainChoiceScreen
+                    cards={this.state.cardsInPlay}
+                  ></CoCaptainChoiceScreen>
+                )}
+>>>>>>> 3b57c9ffc5c3bda24cb5425e40aa3e4216fd727a
               />
 
               <Route
@@ -116,12 +124,31 @@ class MainContainer extends Component {
 
               <Route
                 exact
+                path="/thething/cards/id"
+                render={() => <Card></Card>}
+              />
+
+              <Route
+                exact
+                path="/thething/cards"
+                render={() => <CardList cards={this.state.cards}></CardList>}
+              />
+
+              <Route
+                exact
                 path="/thething"
                 render={() => <PreGameContainer></PreGameContainer>}
               />
             </Switch>
           </Fragment>
         </Router>
+        <div className="role-contianer">
+          <RoleContainer
+            className="role-contianer"
+            players={this.state.players}
+            onUpdate={this.handleUpdate}
+          ></RoleContainer>
+        </div>
       </section>
     ) : (
       <p>Loading ....</p>

@@ -1,5 +1,5 @@
 import React from "react";
-import Player from "./Player";
+import { Link } from "react-router-dom";
 
 const PlayerDetail = props => {
   if (!props.player) {
@@ -7,12 +7,19 @@ const PlayerDetail = props => {
   }
 
   return (
-    <div className="component">
-      <Player player={props.player} />
-      {/* <p>Role:</p>
-      <p>{player.role}</p>
-      <p>Party:</p>
-      <p>{player.party}</p> */}
+    <div>
+      <div className="player">
+        <h2>{props.player.name}</h2>
+        <p>Your role in the game are as follow.</p>
+        <p>Please keep this secret</p>
+        <p>Role:</p>
+        <p>{props.player.role}</p>
+        <p>Party:</p>
+        <p>{props.player.party}</p>
+      </div>
+      <Link to="/thething/players">
+        <button type="button">Back to All Players</button>
+      </Link>
     </div>
   );
 };
