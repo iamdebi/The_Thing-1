@@ -2,6 +2,7 @@ package com.example.The_Thing.controllers;
 
 import com.example.The_Thing.models.ImitationBlocked;
 import com.example.The_Thing.models.ImitationPassed;
+import com.example.The_Thing.models.Player;
 import com.example.The_Thing.repositories.ImitationPassedRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,15 +17,15 @@ public class ImitationPassController {
     @Autowired
     ImitationPassedRepository imitationPassRepository;
 
-    @GetMapping(value = "/players")
+    @GetMapping(value = "/imitation-passes")
     ResponseEntity<List<ImitationPassed>> findAllImitationPassed() {
         return new ResponseEntity<>(imitationPassRepository.findAll(), HttpStatus.OK);
     }
 
-    @PatchMapping(value = "/imitation-pass/{id}")
-    ResponseEntity<ImitationPassed> updateImitationPass(@RequestBody ImitationPassed imitationPassed, @PathVariable Long id) {
-        imitationPassRepository.save(imitationPassed);
-        return new ResponseEntity<ImitationPassed>(imitationPassed, HttpStatus.CREATED);
+    @PostMapping(value = "/players")
+    public ResponseEntity<ImitationPassed> postPlayer(@RequestBody ImitationPassed imitationPass) {
+        imitationPassRepository.save(imitationPass);
+        return new ResponseEntity<>(imitationPass, HttpStatus.CREATED);
     }
 
     @DeleteMapping(value = "/imitation-passes")
