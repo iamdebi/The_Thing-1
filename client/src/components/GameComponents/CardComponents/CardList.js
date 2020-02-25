@@ -1,6 +1,5 @@
 import React from "react";
 import Card from "./Card";
-import { Link } from "react-router-dom";
 
 const CardList = props => {
   if (props.cardsInPlay.length === 0) {

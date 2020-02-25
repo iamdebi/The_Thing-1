@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import CardList from "./CardComponents/CardList";
+import { Link } from "react-router-dom";
 
 const CaptainChoiceScreen = props => {
   return (
@@ -20,6 +21,9 @@ const CaptainChoiceScreen = props => {
           discard={props.discard}
           cardsInPlay={props.cardsInPlay}
         ></CardList>
+        <Link to="/thething/cocaptain">
+          <button type="button">Go to cocaptain</button>
+        </Link>
       </div>
     </Fragment>
   );

@@ -130,7 +130,7 @@ class MainContainer extends Component {
                 render={() => <CoCaptainChoiceScreen></CoCaptainChoiceScreen>}
                 render={() => (
                   <CoCaptainChoiceScreen
-                    cards={this.state.cardsInPlay}
+                    cardsInPlay={this.state.cardsInPlay}
                   ></CoCaptainChoiceScreen>
                 )}
               />
