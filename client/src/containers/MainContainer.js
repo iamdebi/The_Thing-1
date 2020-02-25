@@ -160,23 +160,6 @@ class MainContainer extends Component {
 
               <Route
                 exact
-                path="/thething/cards/id"
-                render={() => <Card></Card>}
-              />
-
-              <Route
-                exact
-                path="/thething/cards"
-                render={() => (
-                  <CardList
-                    discard={this.discardCard}
-                    cards={this.state.cards}
-                  ></CardList>
-                )}
-              />
-
-              <Route
-                exact
                 path="/thething"
                 render={() => <PreGameContainer></PreGameContainer>}
               />
