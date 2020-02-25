@@ -22,7 +22,7 @@ public class ImitationPassController {
         return new ResponseEntity<>(imitationPassRepository.findAll(), HttpStatus.OK);
     }
 
-    @PostMapping(value = "/players")
+    @PostMapping(value = "/imitation-passes")
     public ResponseEntity<ImitationPassed> postPlayer(@RequestBody ImitationPassed imitationPass) {
         imitationPassRepository.save(imitationPass);
         return new ResponseEntity<>(imitationPass, HttpStatus.CREATED);
