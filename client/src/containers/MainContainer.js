@@ -90,15 +90,14 @@ class MainContainer extends Component {
     });
   }
 
-  addToGameBoard(){
-
-    const card = this.state.cardsInPlay[0]
-    if(card.type === "passed"){
-      this.setState({immitationsPassBoard: this.state.cardsInPlay})
+  addToGameBoard() {
+    const card = this.state.cardsInPlay[0];
+    if (card.type === "passed") {
+      this.setState({ immitationsPassBoard: this.state.cardsInPlay });
     } else {
-      this.setState({immitationsBlockedBoard: this.state.cardsInPlay})
-      }
+      this.setState({ immitationsBlockedBoard: this.state.cardsInPlay });
     }
+  }
 
   restCoCaptain(player) {
     this.setState({
