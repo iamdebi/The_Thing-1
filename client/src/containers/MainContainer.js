@@ -28,6 +28,7 @@ class MainContainer extends Component {
     this.handleUpdate = this.handleUpdate.bind(this);
     this.shuffle = this.shuffle.bind(this);
     this.draw3 = this.draw3.bind(this);
+    this.discardCard = this.discardCard.bind(this);
   }
 
   componentDidMount() {
@@ -67,6 +68,36 @@ class MainContainer extends Component {
     let shuffledCards = this.shuffle(this.state.cards);
     this.state.cardsInPlay = shuffledCards.slice(0, 3);
     return this.state.cardsInPlay;
+  }
+
+  findCardById(id) {
+    return this.state.Card.find(card => {
+      return card.id === id;
+    });
+  }
+
+  findCardInPlay(id) {
+    return this.state.cardsInPlay.find(card => {
+      return card.id === id;
+    });
+  }
+
+  discardCard(id) {
+    const card = this.findCardInPlay(id);
+    this.setState({ cardsInPlay: this.cardsInPlay.filter(card => !card) });
+  }
+
+  restCoCaptain(player) {
+    this.setState({
+      coCaptain: {
+        name: player.name,
+        role: player.role,
+        party: player.party,
+        captain: player.captain,
+        coCaptain: true,
+        vote: player.vote
+      }
+    });
   }
 
   render() {
@@ -132,7 +163,12 @@ class MainContainer extends Component {
               <Route
                 exact
                 path="/thething/cards"
-                render={() => <CardList cards={this.state.cards}></CardList>}
+                render={() => (
+                  <CardList
+                    discard={this.discardCard}
+                    cards={this.state.cards}
+                  ></CardList>
+                )}
               />
 
               <Route

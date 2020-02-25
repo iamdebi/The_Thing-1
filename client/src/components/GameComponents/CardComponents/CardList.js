@@ -12,10 +12,7 @@ const CardList = props => {
       <div>
         <li key={index} className="component-item">
           <div className="component">
-            <Card card={card}></Card>
-            <button onclick={discard()} type="button">
-              Discard Card
-            </button>
+            <Card discard={props.discard} card={card}></Card>
           </div>
         </li>
       </div>
