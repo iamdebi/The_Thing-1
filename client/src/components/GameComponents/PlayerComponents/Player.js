@@ -2,11 +2,11 @@ import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 
 const Player = props => {
-  if (!props.Player) {
+  if (!props.player) {
     return "Loading...";
   }
 
-  const url = "/game/" + props.player.id;
+  const url = "/thething/players/" + props.player.id;
 
   return (
     <Fragment>

@@ -1,7 +1,7 @@
 import React, { Fragment, Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import PreGameContainer from "./PreGameContainer";
-import GameViewContainer from "./GameViewContainer";
+import RoleContainer from "./RoleContainer";
 import CaptainChoiceScreen from "../components/GameComponents/CaptainChoiceScreen";
 import CoCaptainChoiceScreen from "../components/GameComponents/CoCaptainChoiceScreen";
 import GameBoards from "../components/GameComponents/GameBoards";
@@ -13,10 +13,10 @@ class MainContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      players: props.players,
+      players: [],
       aliens: [],
       humans: [],
-      cards: props.cards,
+      cards: [],
       cardsInPlay: [],
       immitationsBlockedBoard: [],
       immitationsPassBoard: [],
@@ -62,7 +62,7 @@ class MainContainer extends Component {
                 path="/thething/players/:id"
                 render={props => {
                   const id = props.match.params.id;
-                  const player = this.findPlayerById(id);
+                  const player = this.findPlayerById(parseInt(id));
                   return <PlayerDetails player={player} />;
                 }}
               />
@@ -70,8 +70,6 @@ class MainContainer extends Component {
                 exact
                 path="/thething/players"
                 render={() => {
-                  console.log("here");
-
                   return <PlayersList players={this.state.players} />;
                 }}
               />
@@ -105,6 +103,13 @@ class MainContainer extends Component {
             </Switch>
           </Fragment>
         </Router>
+        <div className="role-contianer">
+          <RoleContainer
+            className="role-contianer"
+            players={this.state.players}
+            onUpdate={this.handleUpdate}
+          ></RoleContainer>
+        </div>
       </section>
     ) : (
       <p>Loading ....</p>

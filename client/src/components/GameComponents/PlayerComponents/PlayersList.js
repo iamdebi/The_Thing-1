@@ -1,5 +1,6 @@
 import React from "react";
 import Player from "./Player";
+import { Link } from "react-router-dom";
 
 const PlayersList = props => {
   if (props.players.length === 0) {
@@ -8,15 +9,24 @@ const PlayersList = props => {
 
   const players = props.players.map((player, index) => {
     return (
-      <li key={index} className="component-item">
-        <div className="component">
-          <Player player={player}></Player>
-        </div>
-      </li>
+      <div>
+        <li key={index} className="component-item">
+          <div className="component">
+            <Player player={player}></Player>
+          </div>
+        </li>
+      </div>
     );
   });
 
-  return <ul className="component-list">{players}</ul>;
+  return (
+    <div>
+      <ul className="component-list">{players}</ul>
+      <Link className="button" to="/thething/captain">
+        <button type="button">Go to Captain</button>
+      </Link>
+    </div>
+  );
 };
 
 export default PlayersList;
