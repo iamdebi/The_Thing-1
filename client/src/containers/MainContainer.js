@@ -29,6 +29,7 @@ class MainContainer extends Component {
     this.shuffle = this.shuffle.bind(this);
     this.draw3 = this.draw3.bind(this);
     this.discardCard = this.discardCard.bind(this);
+    this.addToGameBoard = this.addToGameBoard.bind(this);
   }
 
   componentDidMount() {
@@ -89,6 +90,16 @@ class MainContainer extends Component {
     });
   }
 
+  addToGameBoard(){
+
+    const card = this.state.cardsInPlay[0]
+    if(card.type === "passed"){
+      this.setState({immitationsPassBoard: this.state.cardsInPlay})
+    } else {
+      this.setState({immitationsBlockedBoard: this.state.cardsInPlay})
+      }
+    }
+
   restCoCaptain(player) {
     this.setState({
       coCaptain: {
@@ -130,6 +141,7 @@ class MainContainer extends Component {
                 render={() => <CoCaptainChoiceScreen></CoCaptainChoiceScreen>}
                 render={() => (
                   <CoCaptainChoiceScreen
+                    addToGameBoard={this.addToGameBoard}
                     discard={this.discardCard}
                     cardsInPlay={this.state.cardsInPlay}
                   ></CoCaptainChoiceScreen>
@@ -154,6 +166,7 @@ class MainContainer extends Component {
                 path="/thething/board"
                 render={() => (
                   <GameBoards
+                    cardsInPlay={this.state.cardsInPlay}
                     immitationsBlockedBoard={this.state.immitationsBlockedBoard}
                     immitationsPassBoard={this.state.immitationsPassBoard}
                   ></GameBoards>

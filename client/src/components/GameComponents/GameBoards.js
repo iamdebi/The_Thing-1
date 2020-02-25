@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 
 const GameBoards = (props) => {
 
+
   return (
 
     <Fragment>

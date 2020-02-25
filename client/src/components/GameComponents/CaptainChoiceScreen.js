@@ -22,7 +22,7 @@ const CaptainChoiceScreen = props => {
           cardsInPlay={props.cardsInPlay}
         ></CardList>
         <Link to="/thething/cocaptain">
-          <button type="button">Go to cocaptain</button>
+          <button type="button">Go to Co-Captain</button>
         </Link>
       </div>
     </Fragment>
