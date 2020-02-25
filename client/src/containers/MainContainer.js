@@ -1,59 +1,124 @@
 import React, { Fragment, Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-// import Request from "../helpers/request";
 import PreGameContainer from "./PreGameContainer";
-import GameContainer from "./GameContainer";
+import GameViewContainer from "./GameViewContainer";
+import CaptainChoiceScreen from "../components/GameComponents/CaptainChoiceScreen";
+import CoCaptainChoiceScreen from "../components/GameComponents/CoCaptainChoiceScreen";
+import GameBoards from "../components/GameComponents/GameBoards";
+import PlayerDetails from "../components/GameComponents/PlayerComponents/PlayerInfo";
+import PlayersList from "../components/GameComponents/PlayerComponents/PlayersList";
+import Request from "../helpers/request";
 
 class MainContainer extends Component {
-  // i have commented this out as I think it should be in the gameContainer?
+  constructor(props) {
+    super(props);
+    this.state = {
+      players: props.players,
+      aliens: [],
+      humans: [],
+      cards: props.cards,
+      cardsInPlay: [],
+      immitationsBlockedBoard: [],
+      immitationsPassBoard: [],
+      playersPopulated: false
+    };
+    this.findPlayerById = this.findPlayerById.bind(this);
+    this.handleUpdate = this.handleUpdate.bind(this);
+  }
 
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     players: [],
-  //     cards: []
-  //   };
-  // }
+  componentDidMount() {
+    const request = new Request();
+    const playerPromise = request.get("/api/players");
+    const cardsPromise = request.get("/api/cards");
 
+    Promise.all([playerPromise, cardsPromise]).then(data => {
+      this.setState({
+        players: data[0],
+        cards: data[1],
+        playersPopulated: true
+      });
+    });
+  }
 
+  handleUpdate(player, id) {
+    const request = new Request();
+    request.patch("/api/players/" + id, player);
+  }
 
-  // componentDidMount() {
-  //   const request = new Request();
-  //   const playerPromise = request.get("/api/players");
-  //   const cardsPromise = request.get("/api/cards");
-
-  //   Promise.all([playerPromise, cardsPromise]).then(data => {
-  //     this.setState({
-  //       players: data[0],
-  //       cards: data[1]
-  //     });
-  //   });
-  // }
+  findPlayerById(id) {
+    return this.state.players.find(player => {
+      return player.id === id;
+    });
+  }
 
   render() {
-    return (
-      <Router>
-        <Fragment>
-          <Switch>
+    return this.state.playersPopulated ? (
+      <section className="game-container">
+        <Router>
+          <Fragment>
+            <Switch>
+              <Route
+                exact
+                path="/thething/game/players/:id"
+                render={props => {
+                  const id = props.match.params.id;
+                  const player = this.findPlayerById(id);
+                  return <PlayerDetails player={player} />;
+                }}
+              />
+              <Route
+                exact
+                path="/thething/game/players"
+                render={() => {
+                  console.log("here");
 
-          <Route
-            path="/thething/game"
-            render={() => <GameContainer></GameContainer>}
-            />
+                  return <PlayersList players={this.state.players} />;
+                }}
+              />
+              <Route
+                exact
+                path="/thething/game/cocaptain"
+                render={() => <CoCaptainChoiceScreen></CoCaptainChoiceScreen>}
+              />
 
-          <Route
-            path="/thething/setup"
-            render={() => <PreGameContainer></PreGameContainer>}
-          />
+              <Route
+                exact
+                path="/thething/game/captain"
+                render={() => <CaptainChoiceScreen></CaptainChoiceScreen>}
+              />
+              <Route
+                exact
+                path="/thething/game/board"
+                render={() => (
+                  <GameBoards
+                    immitationsBlockedBoard={this.state.immitationsBlockedBoard}
+                    immitationsPassBoard={this.state.immitationsPassBoard}
+                  ></GameBoards>
+                )}
+              />
+              {/* <Route
+              exact
+              path="/thething/game"
+              render={() => <GameViewContainer></GameViewContainer>}
+            /> */}
 
-          <Route
-            path="/thething"
-            render={() => <PreGameContainer></PreGameContainer>}
-          />
+              <Route
+                exact
+                path="/thething/setup"
+                render={() => <PreGameContainer></PreGameContainer>}
+              />
 
-          </Switch>
-        </Fragment>
-      </Router>
+              <Route
+                exact
+                path="/thething"
+                render={() => <PreGameContainer></PreGameContainer>}
+              />
+            </Switch>
+          </Fragment>
+        </Router>
+      </section>
+    ) : (
+      <p>Loading ....</p>
     );
   }
 }

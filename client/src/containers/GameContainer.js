@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Request from "../helpers/request";
-// import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import GameViewContainer from "./GameViewContainer";
 import RoleContainer from "./RoleContainer";
 
@@ -14,7 +13,6 @@ class GameContainer extends Component {
     };
 
     this.handleUpdate = this.handleUpdate.bind(this);
-    // this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount() {
