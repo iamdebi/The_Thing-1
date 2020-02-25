@@ -13,10 +13,10 @@ class MainContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      players: props.players,
+      players: [],
       aliens: [],
       humans: [],
-      cards: props.cards,
+      cards: [],
       cardsInPlay: [],
       immitationsBlockedBoard: [],
       immitationsPassBoard: [],
@@ -24,6 +24,8 @@ class MainContainer extends Component {
     };
     this.findPlayerById = this.findPlayerById.bind(this);
     this.handleUpdate = this.handleUpdate.bind(this);
+    this.shuffle = this.shuffle.bind(this);
+    this.draw3 = this.draw3.bind(this);
   }
 
   componentDidMount() {
@@ -49,6 +51,20 @@ class MainContainer extends Component {
     return this.state.players.find(player => {
       return player.id === id;
     });
+  }
+
+  shuffle(a) {
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    }
+
+  draw3(){
+    let shuffledCards = this.shuffle(this.state.cards)
+    this.state.cardsInPlay = shuffledCards.slice(0,3);
+    return this.state.cardsInPlay;
   }
 
   render() {
@@ -78,14 +94,15 @@ class MainContainer extends Component {
               <Route
                 exact
                 path="/thething/cocaptain"
-                render={() => <CoCaptainChoiceScreen></CoCaptainChoiceScreen>}
+                render={() => <CoCaptainChoiceScreen ></CoCaptainChoiceScreen>}
               />
 
               <Route
                 exact
                 path="/thething/captain"
-                render={() => <CaptainChoiceScreen></CaptainChoiceScreen>}
+                render={() => <CaptainChoiceScreen cardsInPlay={this.state.cardsInPlay} players={this.state.players}></CaptainChoiceScreen>}
               />
+
               <Route
                 exact
                 path="/thething/board"
