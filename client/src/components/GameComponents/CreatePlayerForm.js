@@ -129,7 +129,7 @@ class CreatePlayerForm extends Component {
   handleDeleteAll() {
     const request = new Request();
     const url = "/api/players";
-    request.deleteAll(url).then(() => (window.location = "/thething/game"));
+    request.deleteAll(url).then(() => (window.location = "/thething/players"));
   }
 
   handleSubmit(event) {

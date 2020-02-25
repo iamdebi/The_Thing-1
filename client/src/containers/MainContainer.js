@@ -59,7 +59,7 @@ class MainContainer extends Component {
             <Switch>
               <Route
                 exact
-                path="/thething/game/players/:id"
+                path="/thething/players/:id"
                 render={props => {
                   const id = props.match.params.id;
                   const player = this.findPlayerById(id);
@@ -68,7 +68,7 @@ class MainContainer extends Component {
               />
               <Route
                 exact
-                path="/thething/game/players"
+                path="/thething/players"
                 render={() => {
                   console.log("here");
 
@@ -77,35 +77,24 @@ class MainContainer extends Component {
               />
               <Route
                 exact
-                path="/thething/game/cocaptain"
+                path="/thething/cocaptain"
                 render={() => <CoCaptainChoiceScreen></CoCaptainChoiceScreen>}
               />
 
               <Route
                 exact
-                path="/thething/game/captain"
+                path="/thething/captain"
                 render={() => <CaptainChoiceScreen></CaptainChoiceScreen>}
               />
               <Route
                 exact
-                path="/thething/game/board"
+                path="/thething/board"
                 render={() => (
                   <GameBoards
                     immitationsBlockedBoard={this.state.immitationsBlockedBoard}
                     immitationsPassBoard={this.state.immitationsPassBoard}
                   ></GameBoards>
                 )}
-              />
-              {/* <Route
-              exact
-              path="/thething/game"
-              render={() => <GameViewContainer></GameViewContainer>}
-            /> */}
-
-              <Route
-                exact
-                path="/thething/setup"
-                render={() => <PreGameContainer></PreGameContainer>}
               />
 
               <Route
