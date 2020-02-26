@@ -203,6 +203,7 @@ class MainContainer extends Component {
                 path="/thething/board"
                 render={() => (
                   <GameBoards
+                    players={this.state.players}
                     clearCardsInPlay={this.clearCardsInPlay}
                     cardsInPlay={this.state.cardsInPlay}
                     imitationsBlockedBoard={this.state.imitationsBlockedBoard}

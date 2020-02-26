@@ -7,7 +7,7 @@ const GameBoards = props => {
   };
 
   function checkForWinner(){
-    if(props.imitationsPassBoard.length === 5){
+    if(props.imitationsPassBoard.length === 5) || (props.imitationsPassBoard.length === 4 && props.players.player4.coCaptain = "true"){
       return <h1>Aliens win!</h1>
     }
     else if (props.imitationsBlockedBoard.length === 5){
