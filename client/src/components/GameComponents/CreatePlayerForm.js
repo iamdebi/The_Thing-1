@@ -64,7 +64,7 @@ class CreatePlayerForm extends Component {
     this.setState({
       player1: {
         name: event.target.value,
-        role: "Humans",
+        role: "Human",
         party: "Humans",
         captain: true,
         coCaptain: false,
@@ -90,7 +90,7 @@ class CreatePlayerForm extends Component {
     this.setState({
       player3: {
         name: event.target.value,
-        role: "Humans",
+        role: "Human",
         party: "Humans",
         captain: false,
         coCaptain: false,
@@ -116,7 +116,7 @@ class CreatePlayerForm extends Component {
     this.setState({
       player5: {
         name: event.target.value,
-        role: "Humans",
+        role: "Human",
         party: "Humans",
         captain: false,
         coCaptain: false,
