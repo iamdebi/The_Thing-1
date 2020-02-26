@@ -20,7 +20,7 @@ const PlayersList = props => {
   });
 
   return (
-    <div>
+    <div className="player-list-with-captain-button">
       <ul className="component-list">{players}</ul>
       <Link className="button" to="/thething/captain">
         <button type="button">Go to Captain</button>
