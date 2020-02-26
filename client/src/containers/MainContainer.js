@@ -20,8 +20,8 @@ class MainContainer extends Component {
       humans: [],
       cards: [],
       cardsInPlay: [],
-      imitationsBlockedBoard: [],
-      imitationsPassBoard: [],
+      imitationsBlockedBoard: null,
+      imitationsPassBoard: null,
       playersPopulated: false
     };
     this.findPlayerById = this.findPlayerById.bind(this);
@@ -38,7 +38,7 @@ class MainContainer extends Component {
     const playerPromise = request.get("/api/players");
     const cardsPromise = request.get("/api/cards");
     const imitationsBlockedPromise = request.get("/api/imitation-blocks");
-    const imitationsPassedPromise = request.get("api/imitation-passes");
+    const imitationsPassedPromise = request.get("/api/imitation-passes");
 
     Promise.all([
       playerPromise,
@@ -49,6 +49,8 @@ class MainContainer extends Component {
       this.setState({
         players: data[0],
         cards: data[1],
+        imitationsBlockedBoard: data[2],
+        imitationsPassBoard: data[3],
         playersPopulated: true
       });
     });
