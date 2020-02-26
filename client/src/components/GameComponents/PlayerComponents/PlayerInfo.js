@@ -26,10 +26,6 @@ const PlayerDetail = props => {
     }
 
 
-
-
-
-
   return (
       <div className="player">
         <h2><u>{props.player.name}</u></h2>
