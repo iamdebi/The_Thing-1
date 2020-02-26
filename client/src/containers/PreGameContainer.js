@@ -1,7 +1,6 @@
-import React, { Fragment, Component } from "react";
+import React, { Component } from "react";
 import PreGame from "../components/GameComponents/PreGame";
 import CreatePlayerForm from "../components/GameComponents/CreatePlayerForm";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Request from "../helpers/request";
 
 class PreGameContainer extends Component {

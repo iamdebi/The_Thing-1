@@ -7,8 +7,7 @@ import CoCaptainChoiceScreen from "../components/GameComponents/CoCaptainChoiceS
 import GameBoards from "../components/GameComponents/GameBoards";
 import PlayerDetails from "../components/GameComponents/PlayerComponents/PlayerInfo";
 import PlayersList from "../components/GameComponents/PlayerComponents/PlayersList";
-import Card from "../components/GameComponents/CardComponents/Card";
-import CardList from "../components/GameComponents/CardComponents/CardList";
+
 import Request from "../helpers/request";
 
 class MainContainer extends Component {
@@ -188,7 +187,7 @@ class MainContainer extends Component {
                 render={props => {
                   const id = props.match.params.id;
                   const player = this.findPlayerById(parseInt(id));
-                  return <PlayerDetails player={player} />;
+                  return <PlayerDetails player={player} players={this.state.players} humans={this.state.humans} aliens={this.state.aliens} />;
                 }}
               />
               <Route
