@@ -109,30 +109,25 @@ class MainContainer extends Component {
         return player;
       }
     });
-
-    console.log(captainArray);
-
     const captain = captainArray[0];
-    console.log(captain);
-
     var captainId = parseInt(captain.id);
-    console.log(captainId);
-
     if (captainId === 5) {
       captainId = 0;
     }
     const nextCaptainId = captainId + 1;
-    console.log(nextCaptainId);
-
     const nextCaptain = this.findPlayerById(nextCaptainId);
-    console.log(nextCaptain);
-
     captain.captain = false;
     nextCaptain.captain = true;
     this.handleUpdate(captain, captainId);
     this.handleUpdate(nextCaptain, nextCaptainId);
     this.setState({
       cardsInPlay: []
+    });
+
+    const request = new Request();
+    const playerPromise = request.get("/api/players");
+    request.get(playerPromise).then(data => {
+      this.setState({ players: data });
     });
   }
 
