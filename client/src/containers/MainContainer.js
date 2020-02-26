@@ -152,6 +152,12 @@ class MainContainer extends Component {
   }
 
   render() {
+    let displayValue = "flex";
+
+    if(this.state.players.length === 0){
+      displayValue = "none";
+    }
+
     return this.state.playersPopulated ? (
       <section className="game-container">
         <Router>
@@ -219,7 +225,7 @@ class MainContainer extends Component {
             </Switch>
           </Fragment>
         </Router>
-        <div className="role-container">
+        <div className="role-container" style={{display: displayValue}}>
           <RoleContainer
             className="role-container"
             players={this.state.players}
