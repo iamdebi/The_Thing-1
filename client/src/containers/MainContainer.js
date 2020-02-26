@@ -37,11 +37,20 @@ class MainContainer extends Component {
     const request = new Request();
     const playerPromise = request.get("/api/players");
     const cardsPromise = request.get("/api/cards");
+    const imitationsBlockedPromise = request.get("/api/imitation-blocks");
+    const imitationsPassedPromise = request.get("api/imitation-passes");
 
-    Promise.all([playerPromise, cardsPromise]).then(data => {
+    Promise.all([
+      playerPromise,
+      cardsPromise,
+      imitationsBlockedPromise,
+      imitationsPassedPromise
+    ]).then(data => {
       this.setState({
         players: data[0],
         cards: data[1],
+        immitationsBlockedBoard: data[2],
+        immitationsBlockedBoard: data[3],
         playersPopulated: true
       });
     });
@@ -94,16 +103,15 @@ class MainContainer extends Component {
   clearCardsInPlay() {
     this.setState({
       cardsInPlay: []
-    })
+    });
   }
 
-  addToGameBoard(){
-
-    const card = this.state.cardsInPlay[0]
-    if(card.type === "passed"){
-      this.setState({immitationsPassBoard: this.state.cardsInPlay})
+  addToGameBoard() {
+    const card = this.state.cardsInPlay[0];
+    if (card.type === "passed") {
+      this.setState({ immitationsPassBoard: this.state.cardsInPlay });
     } else {
-      this.setState({immitationsBlockedBoard: this.state.cardsInPlay})
+      this.setState({ immitationsBlockedBoard: this.state.cardsInPlay });
     }
   }
 
