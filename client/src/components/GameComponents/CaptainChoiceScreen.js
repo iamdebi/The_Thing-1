@@ -19,6 +19,9 @@ const CaptainChoiceScreen = props => {
       <div>
         <h1>
           <u>Captain</u>
+          <br />
+          <br />
+          Choose Your Co-Captain
         </h1>
         <br />
         <button onClick={props.draw3}>Draw 3 cards</button>

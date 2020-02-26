@@ -6,16 +6,29 @@ const PlayerDetail = props => {
     return "Loading ....";
   }
 
-
-  function showAlienTeam(array){
+  function populateAlienTeam(array){
     for (var player of array){
       if(player.party === "Aliens"){
-        console.log(player.name);
+        props.aliens.push(player)
       }
     }
+    return props.aliens;
   }
+  populateAlienTeam(props.players);
 
-  showAlienTeam(props.players);
+  function renderParty(){
+    if(props.player.party === "Aliens" ){
+      return props.player.party + ": " + props.aliens[0].name + " - " + props.aliens[0].role + " & " + props.aliens[1].name + " - " + props.aliens[1].role;
+    } else if
+      (props.player.party ==="Humans"){
+      return props.player.party;
+      }
+    }
+
+
+
+
+
 
   return (
       <div className="player">
@@ -24,12 +37,14 @@ const PlayerDetail = props => {
         <p><u>Role:</u></p>
         <p>{props.player.role}</p>
         <p><u>Party:</u></p>
-        <p>{props.player.party}</p>
+        <div>
+          <p>{renderParty()}</p>
+        </div>
         <Link to="/thething/players">
           <button type="button">Back to All Players</button>
         </Link>
     </div>
   );
-};
+}
 
 export default PlayerDetail;
