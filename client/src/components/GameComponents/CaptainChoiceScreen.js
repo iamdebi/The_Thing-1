@@ -1,4 +1,4 @@
-import React, { Component, Fragment, useEffect } from "react";
+import React, { Fragment } from "react";
 import CardList from "./CardComponents/CardList";
 import { Link } from "react-router-dom";
 import Request from "../../helpers/request";
@@ -12,9 +12,7 @@ const CaptainChoiceScreen = props => {
     });
   }
 
-  useEffect(() => {
-    fetch();
-  }, []);
+
 
   return (
     <Fragment>

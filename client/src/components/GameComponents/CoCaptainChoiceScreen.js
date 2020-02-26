@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-import { Link } from "react-router-dom";
 import CardList from "./CardComponents/CardList";
 
 const CoCaptain = props => {

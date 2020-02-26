@@ -155,3 +155,8 @@ li {
   justify-content: center;
   display: flex;
 }
+
+.win-message {
+  font-size: 50px;
+  background-color: #00455e;
+}

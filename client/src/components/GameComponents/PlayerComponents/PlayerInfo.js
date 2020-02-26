@@ -6,6 +6,17 @@ const PlayerDetail = props => {
     return "Loading ....";
   }
 
+
+  function showAlienTeam(array){
+    for (var player of array){
+      if(player.party === "Aliens"){
+        console.log(player.name);
+      }
+    }
+  }
+
+  showAlienTeam(props.players);
+
   return (
       <div className="player">
         <h2><u>{props.player.name}</u></h2>
