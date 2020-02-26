@@ -9,7 +9,7 @@ const GameBoards = props => {
   function checkForWinner(condition) {
     return (
       (props.imitationsPassBoard.length === 5 && "Aliens Win") ||
-      (props.imitationsBlockedBoard.length === 5 && "Humans Win")
+      (props.imitationsBlockedBoard.length === 5 && "Humans Win") ||
       null
     );
   }
