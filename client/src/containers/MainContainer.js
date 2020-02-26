@@ -148,9 +148,10 @@ class MainContainer extends Component {
   handleNewCard(card) {
     const request = new Request();
     if (card.type === "passed") {
-      request.post("/api/imitation-passes", card);
+      request.post("/api/imitation-passes", {type: "passed"});
     } else {
-      request.post("/api/imitation-blocks", card);
+      console.log("CALLED");
+      request.post("/api/imitation-blocks", {type: "blocked"});
     }
     this.updateImitationCardArray();
   }
