@@ -23,7 +23,7 @@ const PlayersList = props => {
     <div className="player-list-with-captain-button">
       <ul className="component-list">{players}</ul>
       <Link className="button" to="/thething/captain">
-        <button type="button">Go to Captain</button>
+        <button type="button">Go to Captain's Choice </button>
       </Link>
     </div>
   );
