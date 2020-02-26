@@ -6,7 +6,7 @@ const CaptainChoiceScreen = props => {
   return (
     <Fragment>
       <div>
-        <h1>Captain</h1>
+        <h1><u>Captain</u></h1>
         <br />
         <h3>
           You have a choice of 3 imitation outcomes.

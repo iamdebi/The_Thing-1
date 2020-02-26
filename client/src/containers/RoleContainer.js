@@ -94,7 +94,7 @@ class RoleContainer extends Component {
         <div className="role-wrapper">
           <h2>Captain:</h2>
           <h4>{this.state.captain.name}</h4>
-          <h3>CoCaptain</h3>
+          <h3>Co-Captain</h3>
           {this.setCoCaptainDropDown()}
         </div>
       </Fragment>

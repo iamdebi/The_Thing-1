@@ -10,8 +10,8 @@ const PlayerDetail = props => {
     <div>
       <div className="player">
         <h2>{props.player.name}</h2>
-        <p>Your role in the game are as follow.</p>
-        <p>Please keep this secret</p>
+        <p>Your role in the game is as follows:</p>
+        <p>Keep this information secret.</p>
         <p>Role:</p>
         <p>{props.player.role}</p>
         <p>Party:</p>
