@@ -6,8 +6,17 @@ const GameBoards = props => {
     props.clearCardsInPlay();
   };
 
+  function checkForWinner(){
+    if(props.imitationsPassBoard.length === 5) || (props.imitationsPassBoard.length === 4 && props.players.player4.coCaptain = "true"){
+      return <h1>Aliens win!</h1>
+    }
+    else if (props.imitationsBlockedBoard.length === 5){
+      return <h1>Humans win!</h1>
+    }
+  }
+
   useEffect(() => {
-    console.log("mount it!");
+    checkForWinner();
   }, []);
 
   return (
@@ -23,6 +32,7 @@ const GameBoards = props => {
             Next Round
           </button>
         </Link>
+        <h4>{checkForWinner()}</h4>
       </div>
     </Fragment>
   );
