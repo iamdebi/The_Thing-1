@@ -7,19 +7,16 @@ const PlayerDetail = props => {
   }
 
   return (
-    <div>
       <div className="player">
-        <h2>{props.player.name}</h2>
-        <p>Your role in the game is as follows:</p>
+        <h2><u>{props.player.name}</u></h2>
         <p>Keep this information secret.</p>
-        <p>Role:</p>
+        <p><u>Role:</u></p>
         <p>{props.player.role}</p>
-        <p>Party:</p>
+        <p><u>Party:</u></p>
         <p>{props.player.party}</p>
-      </div>
-      <Link to="/thething/players">
-        <button type="button">Back to All Players</button>
-      </Link>
+        <Link to="/thething/players">
+          <button type="button">Back to All Players</button>
+        </Link>
     </div>
   );
 };
