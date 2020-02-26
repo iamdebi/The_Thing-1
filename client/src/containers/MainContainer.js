@@ -150,7 +150,6 @@ class MainContainer extends Component {
     if (card.type === "passed") {
       request.post("/api/imitation-passes", {type: "passed"});
     } else {
-      console.log("CALLED");
       request.post("/api/imitation-blocks", {type: "blocked"});
     }
     this.updateImitationCardArray();
