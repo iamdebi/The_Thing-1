@@ -106,13 +106,33 @@ class MainContainer extends Component {
     });
   }
 
+  updateImitationCardArray() {
+    const request = new Request();
+    const imitationsBlockedPromise = request.get("/api/imitation-blocks");
+    const imitationsPassedPromise = request.get("/api/imitation-passes");
+    Promise.all([imitationsBlockedPromise, imitationsPassedPromise]).then(
+      data => {
+        this.setState({
+          imitationsBlockedBoard: data[0],
+          imitationsPassBoard: data[1]
+        });
+      }
+    );
+  }
+
+  handleNewCard(card) {
+    const request = new Request();
+    if (card.type === "passed") {
+      request.post("/api/imitation-passes", card);
+    } else {
+      request.post("/api/imitation-blocks", card);
+    }
+    this.updateImitationCardArray();
+  }
+
   addToGameBoard() {
     const card = this.state.cardsInPlay[0];
-    if (card.type === "passed") {
-      this.setState({ imitationsPassBoard: this.state.cardsInPlay });
-    } else {
-      this.setState({ imitationsBlockedBoard: this.state.cardsInPlay });
-    }
+    this.handleNewCard(card);
   }
 
   restCoCaptain(player) {
@@ -153,7 +173,6 @@ class MainContainer extends Component {
               <Route
                 exact
                 path="/thething/cocaptain"
-                render={() => <CoCaptainChoiceScreen></CoCaptainChoiceScreen>}
                 render={() => (
                   <CoCaptainChoiceScreen
                     addToGameBoard={this.addToGameBoard}
