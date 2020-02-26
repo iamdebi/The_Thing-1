@@ -11,7 +11,7 @@ const Player = props => {
   return (
     <Fragment>
       <Link to={url} className="name">
-        <p>Name: {props.player.name}</p>
+        <p>{props.player.name}</p>
         <button type="button">View Role</button>
       </Link>
     </Fragment>

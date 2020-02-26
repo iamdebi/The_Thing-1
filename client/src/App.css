@@ -3,6 +3,10 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+body {
+  font-family: Trade Winds;
+
+}
 
 .App-header {
   background-color: #282c34;
@@ -65,6 +69,7 @@
   color: white;
   position: relative;
   margin: none;
+  font-family: Trade Winds;
 }
 
 h1 {
