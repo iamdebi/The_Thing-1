@@ -104,6 +104,15 @@ class MainContainer extends Component {
   }
 
   clearCardsInPlay() {
+    const captain = this.state.players.map((player, index) => {
+      if (player.captain === true) {
+        return player;
+      }
+    });
+    const nextCaptainId = captain.id++;
+    const nextCaptain = this.findPlayerById(nextCaptainId);
+    captain.captain = false;
+    nextCaptain.captain = true;
     this.setState({
       cardsInPlay: []
     });
@@ -214,7 +223,9 @@ class MainContainer extends Component {
               <Route
                 exact
                 path="/thething"
-                render={() => <PreGameContainer></PreGameContainer>}
+                render={() => (
+                  <PreGameContainer className="pregame-container"></PreGameContainer>
+                )}
               />
             </Switch>
           </Fragment>
