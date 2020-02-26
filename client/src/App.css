@@ -33,6 +33,10 @@ body {
   }
 }
 
+.text {
+  margin: inherit;
+}
+
 .game-container {
   display: flex;
 }
