@@ -5,12 +5,14 @@ const PreGame = props => {
     <Fragment>
       <section className="pregame-component">
         <div id="intro-text">
-          <h1>The Thing: A hidden traitor game for 5 players</h1>
+          <h1 className="text">
+            The Thing: A hidden traitor game for 5 players
+          </h1>
 
           <h3>
-            <u>Overview</u>
+            <u className="text">Overview</u>
           </h3>
-          <p>
+          <p className="text">
             It is the start of the bleak, desolate winter for researchers
             manning a claustrophobic, isolated Antarctic outpost when they come
             into contact with a hostile extraterrestrial lifeform. Bent on
@@ -23,39 +25,45 @@ const PreGame = props => {
           </p>
 
           <h3>
-            <u>The Game</u>
+            <u className="text">The Game</u>
           </h3>
-          <p>Each player will be assigned a party: Human or Alien.</p>
-          <p>
-            The goal of the <u>humans</u> is to block 5 imitation attempts by
-            The Thing or it's alien accomplice.
+          <p className="text">
+            Each player will be assigned a party: Human or Alien.
+          </p>
+          <p className="text">
+            The goal of the <u className="text">humans</u> is to block 5
+            imitation attempts by The Thing or it's alien accomplice.
             <br /> Do this by playing imitation blocked cards to the board.{" "}
           </p>
-          <p>
-            The goal of the <u>aliens</u>, which is made up of the alien leader,
-            The Thing, and at least one accomplice, is to remain hidden long
-            enough to successfully imitate 5 times.
+          <p className="text">
+            The goal of the <u className="text">aliens</u>, which is made up of
+            the alien leader, The Thing, and at least one accomplice, is to
+            remain hidden long enough to successfully imitate 5 times.
             <br /> Do this by playing imitation success cards to the board.
           </p>
 
           <h3>
-            <u>Each Round</u>
+            <u className="text">Each Round</u>
           </h3>
-          <p>
+          <p className="text">
             A Captain will be assigned. They will choose a Co-Captain. <br />
-            The <b>Captain</b> will draw a hand of 3 cards made of{" "}
-            <b>Imitation Blocked</b> and <b>Imitation Successful</b> cards.
+            The <b className="text">Captain</b> will draw a hand of 3 cards made
+            of <b className="text">Imitation Blocked</b> and{" "}
+            <b className="text">Imitation Successful</b> cards.
             <br /> They will discard one and pass the remaining two to the{" "}
-            <b>Co-Captain</b> who will choose a card to <b>play to the board</b>
+            <b className="text">Co-Captain</b> who will choose a card to{" "}
+            <b className="text">play to the board</b>
           </p>
 
-          <h3>
+          <h3 className="text">
             If The Thing is chosen as Co-Captain <u>after</u> 4 Imitation
             Successful cards have been played to the board;
             <br /> the aliens automatically win.
           </h3>
           <br />
-          <button onClick={props.updateSwitcher}>Enter Player Names</button>
+          <button className="button" onClick={props.updateSwitcher}>
+            Enter Player Names
+          </button>
         </div>
       </section>
     </Fragment>

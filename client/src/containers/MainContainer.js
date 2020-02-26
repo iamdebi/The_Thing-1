@@ -118,7 +118,11 @@ class MainContainer extends Component {
       captainId = 0;
     }
     const nextCaptainId = captainId + 1;
+    console.log(nextCaptainId);
+
     const nextCaptain = this.findPlayerById(nextCaptainId);
+    console.log(nextCaptain);
+
     captain.captain = false;
     nextCaptain.captain = true;
     this.handleUpdate(captain, captainId);
@@ -126,6 +130,7 @@ class MainContainer extends Component {
     this.setState({
       cardsInPlay: []
     });
+    window.location = "/thething/captain";
   }
 
   updateImitationCardArray() {
@@ -145,9 +150,9 @@ class MainContainer extends Component {
   handleNewCard(card) {
     const request = new Request();
     if (card.type === "passed") {
-      request.post("/api/imitation-passes", {type: "passed"});
+      request.post("/api/imitation-passes", { type: "passed" });
     } else {
-      request.post("/api/imitation-blocks", {type: "blocked"});
+      request.post("/api/imitation-blocks", { type: "blocked" });
     }
     this.updateImitationCardArray();
   }

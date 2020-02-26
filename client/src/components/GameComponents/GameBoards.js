@@ -9,13 +9,14 @@ const GameBoards = props => {
   function checkForWinner(condition) {
     let arrayOfPlayers = props.players;
     let coCaptAndThingBoolean = arrayOfPlayers.forEach((player, index) => {
-      if(player.coCaptain === true && player.role === "The Thing"){
+      if (player.coCaptain === true && player.role === "The Thing") {
         return true;
       }
-
-    })
+    });
     return (
-      (props.imitationsPassBoard.length === 4 && coCaptAndThingBoolean && "Aliens Win") ||
+      (props.imitationsPassBoard.length === 4 &&
+        coCaptAndThingBoolean &&
+        "Aliens Win") ||
       (props.imitationsPassBoard.length === 5 && "Aliens Win") ||
       (props.imitationsBlockedBoard.length === 5 && "Humans Win") ||
       null
@@ -34,11 +35,11 @@ const GameBoards = props => {
         </h1>
         <h2>Imitations Passed:{props.imitationsPassBoard.length}</h2>
         <h2>Imitations Blocked:{props.imitationsBlockedBoard.length}</h2>
-        <Link to="/thething/captain">
-          <button onClick={clearCardsInPlay} type="button">
-            Next Round
-          </button>
-        </Link>
+        {/* <Link to="/thething/captain"> */}
+        <button onClick={clearCardsInPlay} type="button">
+          Next Round
+        </button>
+        {/* </Link> */}
         <h1>{checkForWinner()}</h1>
       </div>
     </Fragment>

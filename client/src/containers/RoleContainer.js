@@ -13,6 +13,9 @@ class RoleContainer extends Component {
     this.getCoCaptain = this.getCoCaptain.bind(this);
     this.setCoCaptain = this.setCoCaptain.bind(this);
   }
+
+  componentWillMount() {}
+
   componentDidMount() {
     this.getCaptain();
     this.getCoCaptain();
