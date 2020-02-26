@@ -6,12 +6,12 @@ const GameBoards = props => {
     props.clearCardsInPlay();
   };
 
-  function checkForWinner() {
-    if (props.imitationsPassBoard.length === 5) {
-      return <h1>Aliens win!</h1>;
-    } else if (props.imitationsBlockedBoard.length === 5) {
-      return <h1>Humans win!</h1>;
-    }
+  function checkForWinner(condition) {
+    return (
+      (props.imitationsPassBoard.length === 5 && "Aliens Win") ||
+      (props.imitationsBlockedBoard.length === 5 && "Humans Win") ||
+      null
+    );
   }
 
   useEffect(() => {
