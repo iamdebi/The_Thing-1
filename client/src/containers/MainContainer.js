@@ -22,7 +22,8 @@ class MainContainer extends Component {
       cardsInPlay: [],
       imitationsBlockedBoard: null,
       imitationsPassBoard: null,
-      playersPopulated: false
+      playersPopulated: false,
+      viewRole: false
     };
     this.findPlayerById = this.findPlayerById.bind(this);
     this.handleUpdate = this.handleUpdate.bind(this);
@@ -31,6 +32,8 @@ class MainContainer extends Component {
     this.discardCard = this.discardCard.bind(this);
     this.addToGameBoard = this.addToGameBoard.bind(this);
     this.clearCardsInPlay = this.clearCardsInPlay.bind(this);
+    this.handleNewCard = this.handleNewCard.bind(this);
+    this.updateImitationCardArray = this.updateImitationCardArray.bind(this);
   }
 
   componentDidMount() {
@@ -110,14 +113,14 @@ class MainContainer extends Component {
     const request = new Request();
     const imitationsBlockedPromise = request.get("/api/imitation-blocks");
     const imitationsPassedPromise = request.get("/api/imitation-passes");
-    Promise.all([imitationsBlockedPromise, imitationsPassedPromise]).then(
-      data => {
+    Promise.all([imitationsBlockedPromise, imitationsPassedPromise])
+      .then(data => {
         this.setState({
           imitationsBlockedBoard: data[0],
           imitationsPassBoard: data[1]
         });
-      }
-    );
+      })
+      .then(() => (window.location = "/thething/board"));
   }
 
   handleNewCard(card) {

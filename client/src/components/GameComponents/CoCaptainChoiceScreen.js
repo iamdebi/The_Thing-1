@@ -8,9 +8,9 @@ const CoCaptain = props => {
   }
 
   const addToGameBoard = () => {
-      props.addToGameBoard()
-  }
-  
+    props.addToGameBoard();
+  };
+
   return (
     <Fragment>
       <div>
@@ -28,9 +28,9 @@ const CoCaptain = props => {
           discard={props.discard}
           cardsInPlay={props.cardsInPlay}
         ></CardList>
-        <Link to="/thething/board">
-          <button onClick={addToGameBoard} type="button">Add to Game Board</button>
-        </Link>
+        <button onClick={addToGameBoard} type="button">
+          Add to Game Board
+        </button>
       </div>
     </Fragment>
   );
