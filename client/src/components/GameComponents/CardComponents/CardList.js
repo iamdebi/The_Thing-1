@@ -9,9 +9,7 @@ const CardList = props => {
     return (
       <div>
         <li key={index} className="component-item">
-          <div className="component">
-            <Card discard={props.discard} card={card}></Card>
-          </div>
+          <Card discard={props.discard} card={card}></Card>
         </li>
       </div>
     );
