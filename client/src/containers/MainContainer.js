@@ -104,15 +104,33 @@ class MainContainer extends Component {
   }
 
   clearCardsInPlay() {
-    const captain = this.state.players.map((player, index) => {
+    const captainArray = this.state.players.filter((player, index) => {
       if (player.captain === true) {
         return player;
       }
     });
-    const nextCaptainId = captain.id++;
+
+    console.log(captainArray);
+
+    const captain = captainArray[0];
+    console.log(captain);
+
+    var captainId = parseInt(captain.id);
+    console.log(captainId);
+
+    if (captainId === 5) {
+      captainId = 0;
+    }
+    const nextCaptainId = captainId + 1;
+    console.log(nextCaptainId);
+
     const nextCaptain = this.findPlayerById(nextCaptainId);
+    console.log(nextCaptain);
+
     captain.captain = false;
     nextCaptain.captain = true;
+    this.handleUpdate(captain, captainId);
+    this.handleUpdate(nextCaptain, nextCaptainId);
     this.setState({
       cardsInPlay: []
     });
@@ -163,7 +181,7 @@ class MainContainer extends Component {
   render() {
     let displayValue = "flex";
 
-    if(this.state.players.length === 0){
+    if (this.state.players.length === 0) {
       displayValue = "none";
     }
 
@@ -236,7 +254,7 @@ class MainContainer extends Component {
             </Switch>
           </Fragment>
         </Router>
-        <div className="role-container" style={{display: displayValue}}>
+        <div className="role-container" style={{ display: displayValue }}>
           <RoleContainer
             className="role-container"
             players={this.state.players}
