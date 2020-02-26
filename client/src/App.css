@@ -129,3 +129,13 @@ li {
 .score-board {
   text-align: center;
 }
+
+.passedImitation {
+  background-color: #00455e;
+  color: #fe947b;
+}
+
+.blockedImitation {
+  background-color: #fe947b;
+  color: #00455e;
+}

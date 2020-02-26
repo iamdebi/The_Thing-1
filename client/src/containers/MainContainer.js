@@ -109,6 +109,9 @@ class MainContainer extends Component {
         return player;
       }
     });
+
+    console.log(captainArray);
+
     const captain = captainArray[0];
     var captainId = parseInt(captain.id);
     if (captainId === 5) {
@@ -122,12 +125,6 @@ class MainContainer extends Component {
     this.handleUpdate(nextCaptain, nextCaptainId);
     this.setState({
       cardsInPlay: []
-    });
-
-    const request = new Request();
-    const playerPromise = request.get("/api/players");
-    request.get(playerPromise).then(data => {
-      this.setState({ players: data });
     });
   }
 

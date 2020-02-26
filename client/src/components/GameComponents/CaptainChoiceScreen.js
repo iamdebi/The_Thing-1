@@ -1,13 +1,27 @@
-import React, { Component, Fragment } from "react";
+import React, { Component, Fragment, useEffect } from "react";
 import CardList from "./CardComponents/CardList";
 import { Link } from "react-router-dom";
+import Request from "../../helpers/request";
 
 const CaptainChoiceScreen = props => {
+  function fetch() {
+    const request = new Request();
+    const playerPromise = request.get("/api/players");
+    request.get(playerPromise).then(data => {
+      this.setState({ players: data });
+    });
+  }
+
+  useEffect(() => {
+    fetch();
+  }, []);
 
   return (
     <Fragment>
       <div>
-        <h1><u>Captain</u></h1>
+        <h1>
+          <u>Captain</u>
+        </h1>
         <br />
         <button onClick={props.draw3}>Draw 3 cards</button>
         <h3>
