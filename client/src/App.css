@@ -125,7 +125,7 @@ li {
 .button {
   display: flex;
   justify-content: center;
-  padding-left: 40px;
+  margin-left: 40px;
 }
 
 .score-board {
