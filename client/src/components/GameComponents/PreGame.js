@@ -39,7 +39,7 @@ const PreGame = props => {
             The goal of the <u className="text">aliens</u>, which is made up of
             the alien leader, The Thing, and at least one accomplice, is to
             remain hidden long enough to successfully imitate 5 times.
-            <br /> Do this by playing imitation success cards to the board.
+            <br /> Do this by playing imitation passed cards to the board.
           </p>
 
           <h3>
@@ -49,7 +49,7 @@ const PreGame = props => {
             A Captain will be assigned. They will choose a Co-Captain. <br />
             The <b className="text">Captain</b> will draw a hand of 3 cards made
             of <b className="text">Imitation Blocked</b> and{" "}
-            <b className="text">Imitation Successful</b> cards.
+            <b className="text">Imitation Passed</b> cards.
             <br /> They will discard one and pass the remaining two to the{" "}
             <b className="text">Co-Captain</b> who will choose a card to{" "}
             <b className="text">play to the board</b>

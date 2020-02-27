@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-import { Link } from "react-router-dom";
 
 const GameBoards = props => {
   const clearCardsInPlay = () => {
@@ -15,10 +14,6 @@ const GameBoards = props => {
   }
 
   function checkForWinner(condition) {
-    checkIfThingCoCapt();
-    let arrayOfPlayers = props.players;
-    let aliensScore4AndThingCoCapt = arrayOfPlayers.filter((player, index) => {
-    })
     return (
       (props.imitationsPassBoard.length === 4 && checkIfThingCoCapt() && "Aliens Have 4 imitations and The Thing is Co-Captain! Aliens Win!") ||
       (props.imitationsPassBoard.length === 5 && "Aliens reached 5 imitations. Aliens Win!") ||

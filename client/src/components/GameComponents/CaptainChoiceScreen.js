@@ -4,13 +4,7 @@ import { Link } from "react-router-dom";
 import Request from "../../helpers/request";
 
 const CaptainChoiceScreen = props => {
-  function fetch() {
-    const request = new Request();
-    const playerPromise = request.get("/api/players");
-    request.get(playerPromise).then(data => {
-      this.setState({ players: data });
-    });
-  }
+  
 
 
 
