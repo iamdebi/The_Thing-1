@@ -39,6 +39,12 @@ body {
 
 .game-container {
   display: flex;
+  padding: 5%;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
 }
 
 .pregame-component {
@@ -159,4 +165,13 @@ li {
 .win-message {
   font-size: 50px;
   background-color: #084c61;
+}
+
+.scoreContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.component-list {
+  display: flex;
 }

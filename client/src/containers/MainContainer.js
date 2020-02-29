@@ -182,7 +182,7 @@ class MainContainer extends Component {
     }
 
     return this.state.playersPopulated ? (
-      <section className="game-container">
+      <section className="container">
         <Router>
           <Fragment>
             <Switch>
@@ -192,14 +192,27 @@ class MainContainer extends Component {
                 render={props => {
                   const id = props.match.params.id;
                   const player = this.findPlayerById(parseInt(id));
-                  return <PlayerDetails player={player} players={this.state.players} humans={this.state.humans} aliens={this.state.aliens} />;
+                  return (
+                    <PlayerDetails
+                      className="game-container"
+                      player={player}
+                      players={this.state.players}
+                      humans={this.state.humans}
+                      aliens={this.state.aliens}
+                    />
+                  );
                 }}
               />
               <Route
                 exact
                 path="/thething/players"
                 render={() => {
-                  return <PlayersList players={this.state.players} />;
+                  return (
+                    <PlayersList
+                      className="game-container"
+                      players={this.state.players}
+                    />
+                  );
                 }}
               />
               <Route
@@ -207,6 +220,7 @@ class MainContainer extends Component {
                 path="/thething/cocaptain"
                 render={() => (
                   <CoCaptainChoiceScreen
+                    className="game-container"
                     addToGameBoard={this.addToGameBoard}
                     discard={this.discardCard}
                     cardsInPlay={this.state.cardsInPlay}
@@ -219,6 +233,7 @@ class MainContainer extends Component {
                 path="/thething/captain"
                 render={() => (
                   <CaptainChoiceScreen
+                    className="game-container"
                     discard={this.discardCard}
                     draw3={this.draw3}
                     cardsInPlay={this.state.cardsInPlay}
@@ -232,6 +247,7 @@ class MainContainer extends Component {
                 path="/thething/board"
                 render={() => (
                   <GameBoards
+                    className="game-container"
                     players={this.state.players}
                     clearCardsInPlay={this.clearCardsInPlay}
                     cardsInPlay={this.state.cardsInPlay}
@@ -253,7 +269,7 @@ class MainContainer extends Component {
         </Router>
         <div className="role-container" style={{ display: displayValue }}>
           <RoleContainer
-            className="role-container"
+            className="role-container game-container"
             players={this.state.players}
             onUpdate={this.handleUpdate}
           ></RoleContainer>

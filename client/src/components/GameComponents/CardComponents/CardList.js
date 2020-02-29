@@ -8,7 +8,7 @@ const CardList = props => {
   const cards = props.cardsInPlay.map((card, index) => {
     return (
       <div>
-        <li key={index} className="component-item">
+        <li key={index} className="card-component">
           <Card discard={props.discard} card={card}></Card>
         </li>
       </div>
