@@ -37,9 +37,9 @@ const PlayerDetail = props => {
   let playerType;
 
   if (props.player.party === "Humans") {
-    playerType = "passedImitation";
-  } else {
     playerType = "blockedImitation";
+  } else {
+    playerType = "passedImitation";
   }
 
   return (
