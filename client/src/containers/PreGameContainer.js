@@ -25,7 +25,7 @@ class PreGameContainer extends Component {
 
   render() {
     return this.state.PreGameFormSwitcher ? (
-      <CreatePlayerForm onPost={this.handlePost} />
+      <CreatePlayerForm players={this.props.players} onPost={this.handlePost} />
     ) : (
       <PreGame updateSwitcher={this.updateSwitcher} />
     );

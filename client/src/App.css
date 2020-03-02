@@ -145,6 +145,7 @@ li {
   display: flex;
   flex-direction: column;
   padding: 15px;
+  margin: 5px;
 }
 
 .blockedImitation {
@@ -172,6 +173,6 @@ li {
   flex-direction: column;
 }
 
-.component-list {
+.card-list {
   display: flex;
 }

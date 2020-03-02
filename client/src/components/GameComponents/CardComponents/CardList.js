@@ -17,7 +17,7 @@ const CardList = props => {
 
   return (
     <div>
-      <ul className="component-list">{cards}</ul>
+      <ul className="card-list">{cards}</ul>
     </div>
   );
 };

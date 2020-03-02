@@ -261,7 +261,10 @@ class MainContainer extends Component {
                 exact
                 path="/thething"
                 render={() => (
-                  <PreGameContainer className="pregame-container"></PreGameContainer>
+                  <PreGameContainer
+                    className="pregame-container"
+                    players={this.state.players}
+                  ></PreGameContainer>
                 )}
               />
             </Switch>

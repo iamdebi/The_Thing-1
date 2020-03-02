@@ -6,7 +6,7 @@ const GameBoards = props => {
     props.clearCardsInPlay();
   };
 
-  function checkIfThingCoCapt(array) {
+  function checkIfThingCoCapt() {
     for (var player of props.players) {
       if (player.coCaptain === true && player.role === "The Thing") {
         return true;
@@ -14,7 +14,7 @@ const GameBoards = props => {
     }
   }
 
-  function checkForWinner(condition) {
+  function checkForWinner() {
     return (
       (props.imitationsPassBoard.length === 4 &&
         checkIfThingCoCapt() &&
