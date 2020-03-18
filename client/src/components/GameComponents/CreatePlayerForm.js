@@ -142,7 +142,6 @@ class CreatePlayerForm extends Component {
     this.props.onPost(this.state.player2);
     this.props.onPost(this.state.player3);
     this.props.onPost(this.state.player4);
-    debugger;
     this.props.onPost(this.state.player5);
     this.assignRolesRandom();
   }
@@ -151,7 +150,7 @@ class CreatePlayerForm extends Component {
     return (
       <div className="PlayerInputFormWrapper">
         <form className="PlayerInputForm" onSubmit={this.handleSubmit}>
-          <h1>Enter 5 players names:</h1>
+          <h1 className="playerNameHeader">Enter 5 players names:</h1>
           <input
             onChange={this.handlePlayer1}
             required

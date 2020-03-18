@@ -26,6 +26,7 @@ class RoleContainer extends Component {
       if (player.captain === true) {
         return this.setState({ captain: player });
       }
+      return null;
     });
   }
   getCoCaptain() {
@@ -34,6 +35,7 @@ class RoleContainer extends Component {
       if (player.coCaptain === true) {
         return this.setState({ coCaptain: player });
       }
+      return null;
     });
   }
 

@@ -7,7 +7,7 @@ import CoCaptainChoiceScreen from "../components/GameComponents/CoCaptainChoiceS
 import GameBoards from "../components/GameComponents/GameBoards";
 import PlayerDetails from "../components/GameComponents/PlayerComponents/PlayerInfo";
 import PlayersList from "../components/GameComponents/PlayerComponents/PlayersList";
-
+import Vote from "../components/GameComponents/VoteScreen";
 import Request from "../helpers/request";
 
 class MainContainer extends Component {
@@ -107,6 +107,7 @@ class MainContainer extends Component {
       if (player.captain === true) {
         return player;
       }
+      return null;
     });
 
     console.log(captainArray);
@@ -239,6 +240,17 @@ class MainContainer extends Component {
                     cardsInPlay={this.state.cardsInPlay}
                     players={this.state.players}
                   ></CaptainChoiceScreen>
+                )}
+              />
+
+              <Route
+                exact
+                path="/thething/vote"
+                render={() => (
+                  <Vote
+                    onUpdate={this.handleUpdate}
+                    players={this.state.players}
+                  ></Vote>
                 )}
               />
 
