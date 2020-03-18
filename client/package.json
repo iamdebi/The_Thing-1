@@ -32,5 +32,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://thething-env.eba-anabczr9.us-east-2.elasticbeanstalk.com/"
+  "proxy": "http://thething-env.eba-anabczr9.us-east-2.elasticbeanstalk.com"
 }
