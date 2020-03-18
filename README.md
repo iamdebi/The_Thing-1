@@ -34,7 +34,7 @@ For best viewing experince open in full screen
 Social Deception Game App
 Create a hidden role game, where players are given secret roles, with two teams and try to figure out who is the thing as a series of immitations are passed, implementing full game logic. 
 
-##Game Rules
+## Game Rules
 
 The Thing: A hidden traitor game for 5 players
 Overview
