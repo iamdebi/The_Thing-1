@@ -37,10 +37,18 @@ class MainContainer extends Component {
 
   componentDidMount() {
     const request = new Request();
-    const playerPromise = request.get("/api/players");
-    const cardsPromise = request.get("/api/cards");
-    const imitationsBlockedPromise = request.get("/api/imitation-blocks");
-    const imitationsPassedPromise = request.get("/api/imitation-passes");
+    const playerPromise = request.get(
+      "http://thething-env.eba-anabczr9.us-east-2.elasticbeanstalk.com//api/players"
+    );
+    const cardsPromise = request.get(
+      "http://thething-env.eba-anabczr9.us-east-2.elasticbeanstalk.com//api/cards"
+    );
+    const imitationsBlockedPromise = request.get(
+      "http://thething-env.eba-anabczr9.us-east-2.elasticbeanstalk.com//api/imitation-blocks"
+    );
+    const imitationsPassedPromise = request.get(
+      "http://thething-env.eba-anabczr9.us-east-2.elasticbeanstalk.com//api/imitation-passes"
+    );
 
     Promise.all([
       playerPromise,
@@ -135,8 +143,12 @@ class MainContainer extends Component {
 
   updateImitationCardArray() {
     const request = new Request();
-    const imitationsBlockedPromise = request.get("/api/imitation-blocks");
-    const imitationsPassedPromise = request.get("/api/imitation-passes");
+    const imitationsBlockedPromise = request.get(
+      "http://thething-env.eba-anabczr9.us-east-2.elasticbeanstalk.com//api/imitation-blocks"
+    );
+    const imitationsPassedPromise = request.get(
+      "http://thething-env.eba-anabczr9.us-east-2.elasticbeanstalk.com//api/imitation-passes"
+    );
     Promise.all([imitationsBlockedPromise, imitationsPassedPromise])
       .then(data => {
         this.setState({
