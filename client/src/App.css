@@ -55,6 +55,8 @@ body {
 }
 
 .pregame-component {
+
+  background-image: url("https://images.alphacoders.com/794/794858.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -81,9 +83,7 @@ body {
 }
 
 #intro-text {
-  height: 100vh;
-  background-image: url("https://images.alphacoders.com/794/794858.jpg");
-  font-family: albertus;
+
   color: white;
   position: relative;
   margin: none;
@@ -139,6 +139,12 @@ li {
   display: flex;
   justify-content: center;
   margin-left: 40px;
+}
+
+.pre-game-button {
+  display: flex;
+  justify-content: center;
+  margin-left:auto;
 }
 
 .score-board {
