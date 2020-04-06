@@ -1,11 +1,6 @@
 import React, { Fragment } from "react";
 
 const PreGame = props => {
-  function deletePlayersUpdateSwitcher() {
-    props.deleteAll();
-    props.updateSwitcher();
-  }
-
   return (
     <Fragment>
       <section className="pregame-component">
@@ -19,7 +14,7 @@ const PreGame = props => {
               <u className="text">Overview</u>
             </h3>
             <p className="text">
-              It is the start of the bleak, desolate winter for 5 researchers
+              It is the start of the bleak, desolate winter for researchers
               manning a claustrophobic, isolated Antarctic outpost when they
               come into contact with a hostile extraterrestrial lifeform. Bent
               on assimilating Earth's native species, this being infiltrates the
@@ -61,24 +56,13 @@ const PreGame = props => {
               <b className="text">play to the board</b>
             </p>
 
-            <h3>
-              <u className="text">Game End</u>
-            </h3>
-
             <h3 className="text">
-              • Humans win if: 5 imitation blocked cards are played to the
-              board.
-              <br />
-              • Aliens win if: 5 imitation passed cards are played to the board
-              OR
-              <br />• If The Thing is chosen as Co-Captain <u>after</u> 4
-              Imitation Successful cards have been played to the board.
+              If The Thing is chosen as Co-Captain <u>after</u> 4 Imitation
+              Successful cards have been played to the board;
+              <br /> the aliens automatically win.
             </h3>
             <br />
-            <button
-              className="pre-game-button"
-              onClick={deletePlayersUpdateSwitcher}
-            >
+            <button className="button" onClick={props.updateSwitcher}>
               Enter Player Names
             </button>
           </div>
