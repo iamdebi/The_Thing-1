@@ -1,6 +1,11 @@
 import React, { Fragment } from "react";
 
 const PreGame = props => {
+  function deletePlayersUpdateSwitcher() {
+    props.deleteAll();
+    props.updateSwitcher();
+  }
+
   return (
     <Fragment>
       <section className="pregame-component">
@@ -62,7 +67,7 @@ const PreGame = props => {
               <br /> the aliens automatically win.
             </h3>
             <br />
-            <button className="button" onClick={props.updateSwitcher}>
+            <button className="button" onClick={deletePlayersUpdateSwitcher}>
               Enter Player Names
             </button>
           </div>

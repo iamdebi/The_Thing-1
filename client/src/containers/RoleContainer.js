@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from "react";
+import Request from "../helpers/request";
 
 class RoleContainer extends Component {
   constructor(props) {
@@ -12,6 +13,7 @@ class RoleContainer extends Component {
     this.setCoCaptainDropDown = this.setCoCaptainDropDown.bind(this);
     this.getCoCaptain = this.getCoCaptain.bind(this);
     this.setCoCaptain = this.setCoCaptain.bind(this);
+    this.endGame = this.endGame.bind(this);
   }
 
   componentWillMount() {}
@@ -89,6 +91,13 @@ class RoleContainer extends Component {
       </select>
     );
   }
+
+  endGame() {
+    const request = new Request();
+    const url = "/api/players";
+    request.deleteAll(url).then(() => (window.location = "/thething"));
+  }
+
   render() {
     if (!this.state.captain) {
       return null;
@@ -101,6 +110,7 @@ class RoleContainer extends Component {
           <h4>{this.state.captain.name}</h4>
           <h3>Co-Captain</h3>
           {this.setCoCaptainDropDown()}
+          <button onClick={this.endGame}>End Game</button>
         </div>
       </Fragment>
     );

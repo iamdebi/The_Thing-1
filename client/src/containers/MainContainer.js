@@ -33,6 +33,7 @@ class MainContainer extends Component {
     this.clearCardsInPlay = this.clearCardsInPlay.bind(this);
     this.handleNewCard = this.handleNewCard.bind(this);
     this.updateImitationCardArray = this.updateImitationCardArray.bind(this);
+    this.handleDeleteAll = this.handleDeleteAll.bind(this);
   }
 
   componentDidMount() {
@@ -131,6 +132,12 @@ class MainContainer extends Component {
       cardsInPlay: []
     });
     window.location = "/thething/captain";
+  }
+
+  handleDeleteAll() {
+    const request = new Request();
+    const url = "/api/players";
+    request.deleteAll(url);
   }
 
   updateImitationCardArray() {
@@ -274,6 +281,7 @@ class MainContainer extends Component {
                 path="/thething"
                 render={() => (
                   <PreGameContainer
+                    deleteAll={this.handleDeleteAll}
                     className="pregame-container"
                     players={this.state.players}
                   ></PreGameContainer>
@@ -284,6 +292,7 @@ class MainContainer extends Component {
         </Router>
         <div className="role-container" style={{ display: displayValue }}>
           <RoleContainer
+            deleteAll={this.handleDeleteAll}
             className="role-container game-container"
             players={this.state.players}
             onUpdate={this.handleUpdate}

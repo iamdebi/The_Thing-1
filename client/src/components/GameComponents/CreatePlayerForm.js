@@ -125,14 +125,14 @@ class CreatePlayerForm extends Component {
     });
   }
 
+  assignRolesRandom() {
+    console.log(this.props.players);
+  }
+
   handleDeleteAll() {
     const request = new Request();
     const url = "/api/players";
     request.deleteAll(url).then(() => (window.location = "/thething/players"));
-  }
-
-  assignRolesRandom() {
-    console.log(this.props.players);
   }
 
   handleSubmit(event) {
@@ -143,7 +143,6 @@ class CreatePlayerForm extends Component {
     this.props.onPost(this.state.player3);
     this.props.onPost(this.state.player4);
     this.props.onPost(this.state.player5);
-    this.assignRolesRandom();
   }
 
   render() {
