@@ -111,18 +111,14 @@ class MainContainer extends Component {
       return null;
     });
 
-    console.log(captainArray);
-
     const captain = captainArray[0];
     var captainId = parseInt(captain.id);
     if (captainId === 5) {
       captainId = 0;
     }
     const nextCaptainId = captainId + 1;
-    console.log(nextCaptainId);
 
     const nextCaptain = this.findPlayerById(nextCaptainId);
-    console.log(nextCaptain);
 
     captain.captain = false;
     nextCaptain.captain = true;
