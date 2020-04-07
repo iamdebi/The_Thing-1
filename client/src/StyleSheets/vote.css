@@ -1,0 +1,16 @@
+.voteList {
+  width: 25%;
+  justify-content: center;
+}
+
+.votes {
+  display: flex;
+  justify-content: center;
+  width: 30%;
+}
+
+.voteContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}

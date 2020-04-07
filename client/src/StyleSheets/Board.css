@@ -1,0 +1,17 @@
+.score-board {
+  text-align: center;
+}
+
+.win-message {
+  font-size: 50px;
+  background-color: #084c61;
+}
+
+.scoreContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-list {
+  display: flex;
+}

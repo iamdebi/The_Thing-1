@@ -1,0 +1,14 @@
+.role-container {
+  background-color: #084c61;
+  color: #5d91b0;
+  width: 20%;
+  display: flex;
+  justify-content: center;
+}
+
+.role-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
