@@ -94,8 +94,15 @@ class RoleContainer extends Component {
 
   endGame() {
     const request = new Request();
-    const url = "/api/players";
-    request.deleteAll(url).then(() => (window.location = "/thething"));
+    const playersUrl = "/api/players";
+    const blockedUrl = "/api/imitation-blocks";
+    const passesUrl = "/api/imitation-passes";
+
+    request
+      .deleteAll(playersUrl)
+      .then(request.deleteAll(blockedUrl))
+      .then(request.deleteAll(passesUrl))
+      .then(() => (window.location = "/thething"));
   }
 
   render() {
