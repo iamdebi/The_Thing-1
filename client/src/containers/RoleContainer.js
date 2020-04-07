@@ -97,7 +97,6 @@ class RoleContainer extends Component {
     const playersUrl = "/api/players";
     const blockedUrl = "/api/imitation-blocks";
     const passesUrl = "/api/imitation-passes";
-
     request
       .deleteAll(playersUrl)
       .then(request.deleteAll(blockedUrl))

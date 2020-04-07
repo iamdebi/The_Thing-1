@@ -21,10 +21,6 @@ body {
   color: white;
 }
 
-.playerNameHeader {
-  margin: 2%;
-}
-
 .App-link {
   color: #61dafb;
 }
@@ -38,7 +34,7 @@ body {
   }
 }
 
-/* not used in /players */
+/* not used in /players  */
 /* .player {
   margin: 20px;
   padding: 10px;
