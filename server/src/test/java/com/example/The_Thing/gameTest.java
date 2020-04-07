@@ -34,43 +34,43 @@ class gameTest {
     }
 
     //Comment these out before testing.
-    @Test
-    void canShufflePlayer(){
-        //        randomises so may fail sometimes, ensures the first player1 isn't always first player in array
-        game = new Game();
-        player1 = new Player("player1");
-        player2 = new Player("player2");
-        player3 = new Player("player3");
-        player4 = new Player("player4");
+//    @Test
+//    void canShufflePlayer(){
+//        //        randomises so may fail sometimes, ensures the first player1 isn't always first player in array
+//        game = new Game();
+//        player1 = new Player("player1");
+//        player2 = new Player("player2");
+//        player3 = new Player("player3");
+//        player4 = new Player("player4");
+//
+//        game.addPlayerToGame(player1);
+//        game.addPlayerToGame(player2);
+//        game.addPlayerToGame(player3);
+//        game.addPlayerToGame(player4);
+//
+//        game.randomise(game.getPlayers());
+//        assertEquals(4, game.playerCount());
+//        assertEquals(player1, game.getFirstPlayer());
+//    }
 
-        game.addPlayerToGame(player1);
-        game.addPlayerToGame(player2);
-        game.addPlayerToGame(player3);
-        game.addPlayerToGame(player4);
 
-        game.randomise(game.getPlayers());
-        assertEquals(4, game.playerCount());
-        assertEquals(player1, game.getFirstPlayer());
-    }
-
-
-    @Test
-    void canShuffleCard(){
-//        randomises so may fail sometimes, ensures the first card1 isn't always first card in array
-        game = new Game();
-        card1 = new Card("imitationBlocked");
-        card3 = new Card("imitationBlocked");
-        card2 = new Card("imitationPassed");
-
-        game.addCardToGame(card1);
-        game.addCardToGame(card2);
-        game.addCardToGame(card3);
-
-        game.randomise(game.getCardDeck());
-        assertEquals(3, game.cardCount());
-        assertEquals(card1, game.getFirstCard());
-
-    }
+//    @Test
+//    void canShuffleCard(){
+////        randomises so may fail sometimes, ensures the first card1 isn't always first card in array
+//        game = new Game();
+//        card1 = new Card("imitationBlocked");
+//        card3 = new Card("imitationBlocked");
+//        card2 = new Card("imitationPassed");
+//
+//        game.addCardToGame(card1);
+//        game.addCardToGame(card2);
+//        game.addCardToGame(card3);
+//
+//        game.randomise(game.getCardDeck());
+//        assertEquals(3, game.cardCount());
+//        assertEquals(card1, game.getFirstCard());
+//
+//    }
 
 
 
